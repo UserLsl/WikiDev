@@ -1,3 +1,5 @@
+create database Wikidev;
+
 use Wikidev;
 
 create table User (
@@ -28,14 +30,14 @@ create table Post (
     categoryId int not null,
     userId int not null,
     FOREIGN KEY (categoryId) REFERENCES Category(categoryId),
-    FOREIGN KEY (userId) REFERENCES User(userId),
+    FOREIGN KEY (userId) REFERENCES User(userId)
 );
 
 create table Post_Tag (
     tagId int not null,
     postId int not null,
     FOREIGN KEY (tagId) REFERENCES Tag(tagId),
-    FOREIGN KEY (postId) REFERENCES Post(postId),
+    FOREIGN KEY (postId) REFERENCES Post(postId)
 );
 
 insert into Category set categoryTitle = 'Banco de Dados'

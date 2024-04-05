@@ -17,16 +17,26 @@
                 <li><a href="#">Projetos e Desafios</a></li>
                 <li><a href="#">Recursos</a></li>
                 <li><a href="#" id="loginBtn">Entrar</a></li>
+                <li><p>
+                    <?php
+                    session_start(); 
+                    if (isset($_SESSION['nome'])) {
+                        echo $_SESSION['nome'];
+                    }
+                    //unset( $_SESSION['palavra'] );
+                    //session_destroy();
+                    ?>
+                </p></li>
             </ul>
         </nav>
     </header>
     <div class="overlay" id="overlay"></div><!-- /OVERLAY-->
 
     <div class="login-container" id="loginContainer">
-        <form action="#" method="post" class="login-form">
+        <form action="login.php" method="post" class="login-form">
             <h2>Acesse sua conta</h2>
-            <input type="text" placeholder="Nome de Usuário" required>
-            <input type="password" placeholder="Senha" required>
+            <input name="email" type="email" placeholder="E-mail de Usuário" required>
+            <input name="senha" type="password" placeholder="Senha" required>
             <button type="submit">Entrar</button>
         </form>
     </div><!-- /LOGIN-CONTAINER-->
