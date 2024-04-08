@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/c84d6546c9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
     <title>WikiDev</title>
 </head>
 <body>
@@ -16,19 +17,22 @@
                 <li><a href="#">Tutoriais</a></li>
                 <li><a href="#">Projetos e Desafios</a></li>
                 <li><a href="#">Recursos</a></li>
-                <li><a href="#" id="loginBtn">Entrar</a></li>
+                <!--<li><a href="#" id="loginBtn"><i class="fa-solid fa-user"></i>Entrar</a></li>
                 <li><p>
                     <?php
-                    session_start(); 
+                    /*session_start(); 
                     if (isset($_SESSION['nome'])) {
                         echo $_SESSION['nome'];
                     }
                     //unset( $_SESSION['palavra'] );
-                    //session_destroy();
+                    //session_destroy();*/
                     ?>
-                </p></li>
+                </p></li>-->
             </ul>
         </nav>
+        <button id="loginBtn">
+            <i class="fa fa-user"></i>Entrar</a>
+        </button>
     </header>
     <div class="overlay" id="overlay"></div><!-- /OVERLAY-->
 
@@ -99,6 +103,7 @@
                 <p id="date">23 Mar, 2024</p>
                 <p id="text">Dê as boas-vindas ao emocionante mundo dos bancos de dados, onde os dados se transformam em insights e a informação é o motor da inovação. Em "Construindo com Dados", mergulhe em tutoriais práticos, estratégias de otimização e tendências emergentes que moldam o cenário dos bancos de dados modernos.</p>
             </div><!-- /POST-CONTAINER-->
+            <button type="button" id="btn-ver-mais">VER MAIS</button>
         </div><!-- /POST-WRAPPER-->
         <div class="aside">
             <input type="search" placeholder="BUSCAR..." id="barra-de-busca">
@@ -118,30 +123,29 @@
                 <h3 id="titulo">POSTS MAIS LIDOS</h3>
                 <ul>
                     <li>
-                        <img src="/img/desenvolvimentoDeSoftware.jpg" alt="">
+                        <img src="./img/desenvolvimentoDeSoftware.jpg" alt="">
                         <a href="#">A Arte do Desenvolvimento de Software</a>
                     </li>
                     <li>
-                        <img src="/img/universoJavaScript.jpg" alt="">
+                        <img src="./img/universoJavaScript.jpg" alt="">
                         <a href="#">Explorando o Universo JavaScript</a>
                     </li>
                     <li>
-                        <img src="/img/construindoComDados.jpg" alt="">
+                        <img src="./img/construindoComDados.jpg" alt="">
                         <a href="#">Construindo com Dados</a>
                     </li>
                     <li>
-                        <img src="/img/desvendandoANuvem.jpg" alt="">
+                        <img src="./img/desvendandoANuvem.jpg" alt="">
                         <a href="#">Desvendando a Nuvem</a>
                     </li>
                     <li>
-                        <img src="/img/mundoDaProgramacao.jpg" alt="">
+                        <img src="./img/mundoDaProgramacao.jpg" alt="">
                         <a href="#">Explorando o Mundo da Programação</a>
                     </li>
                 </ul>
             </div><!-- /POSTS-MAIS-LIDOS-->
         </div><!-- /ASIDE-->
     </section>
-
     <script src="script.js"></script>
 </body>
 </html>
