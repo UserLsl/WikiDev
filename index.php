@@ -85,6 +85,25 @@
                 <p id="date">23 Mar, 2024</p>
                 <p id="text">Dê as boas-vindas ao emocionante mundo dos bancos de dados, onde os dados se transformam em insights e a informação é o motor da inovação. Em "Construindo com Dados", mergulhe em tutoriais práticos, estratégias de otimização e tendências emergentes que moldam o cenário dos bancos de dados modernos. </p>
             </div><!-- /POST-CONTAINER-->
+
+            <div class="aside">
+                <div id="busca-categoria-aside">
+                    <input type="search" placeholder="BUSCAR..." id="barra-de-busca">
+                    <div id="categorias">
+                        <h3 id="titulo">CATEGORIAS</h3>
+                        <ul>
+                            <li><a href="#">Desenvolvimento Web</a></li>
+                            <li><a href="#">Linguagens de Programação</a></li>
+                            <li><a href="#">Desenvolvimento Backend</a></li>
+                            <li><a href="#">Desenvolvimento FrontEnd</a></li>
+                            <li><a href="#">FrameWork.net</a></li>
+                            <li><a href="#">JavaScript</a></li>
+                            <li><a href="#">Banco de Dados</a></li>
+                        </ul>
+                    </div><!-- /CATEGORIAS-->
+                </div><!-- /BUSCA-CATEGORIA-ASIDE-->
+            </div><!-- /ASIDE-->
+            
             <div class="post-container">
                 <img src="./img/desvendandoANuvem.jpg" alt="">
                 <h3 id="title">Desvendando a Nuvem</h3>
@@ -103,49 +122,55 @@
                 <p id="date">23 Mar, 2024</p>
                 <p id="text">Dê as boas-vindas ao emocionante mundo dos bancos de dados, onde os dados se transformam em insights e a informação é o motor da inovação. Em "Construindo com Dados", mergulhe em tutoriais práticos, estratégias de otimização e tendências emergentes que moldam o cenário dos bancos de dados modernos.</p>
             </div><!-- /POST-CONTAINER-->
+            
+            <div class="aside">
+                <div id="posts-mais-lidos">
+                    <h3 id="titulo">POSTS MAIS LIDOS</h3>
+                    <ul>
+                        <li>
+                            <img src="./img/desenvolvimentoDeSoftware.jpg" alt="">
+                            <a href="#">A Arte do Desenvolvimento de Software</a>
+                        </li>
+                        <li>
+                            <img src="./img/universoJavaScript.jpg" alt="">
+                            <a href="#">Explorando o Universo JavaScript</a>
+                        </li>
+                        <li>
+                            <img src="./img/construindoComDados.jpg" alt="">
+                            <a href="#">Construindo com Dados</a>
+                        </li>
+                        <li>
+                            <img src="./img/desvendandoANuvem.jpg" alt="">
+                            <a href="#">Desvendando a Nuvem</a>
+                        </li>
+                        <li>
+                            <img src="./img/mundoDaProgramacao.jpg" alt="">
+                            <a href="#">Explorando o Mundo da Programação</a>
+                        </li>
+                    </ul>
+                </div><!-- /POSTS-MAIS-LIDOS-->
+            </div><!-- /ASIDE-->
+
             <button type="button" id="btn-ver-mais">VER MAIS</button>
+
         </div><!-- /POST-WRAPPER-->
-        <div class="aside">
-            <input type="search" placeholder="BUSCAR..." id="barra-de-busca">
-            <div id="categorias">
-                <h3 id="titulo">CATEGORIAS</h3>
-                <ul>
-                    <li><a href="#">Desenvolvimento Web</a></li>
-                    <li><a href="#">Linguagens de Programação</a></li>
-                    <li><a href="#">Desenvolvimento Backend</a></li>
-                    <li><a href="#">Desenvolvimento FrontEnd</a></li>
-                    <li><a href="#">FrameWork.net</a></li>
-                    <li><a href="#">JavaScript</a></li>
-                    <li><a href="#">Banco de Dados</a></li>
-                </ul>
-            </div><!-- /CATEGORIAS-->
-            <div id="posts-mais-lidos">
-                <h3 id="titulo">POSTS MAIS LIDOS</h3>
-                <ul>
-                    <li>
-                        <img src="./img/desenvolvimentoDeSoftware.jpg" alt="">
-                        <a href="#">A Arte do Desenvolvimento de Software</a>
-                    </li>
-                    <li>
-                        <img src="./img/universoJavaScript.jpg" alt="">
-                        <a href="#">Explorando o Universo JavaScript</a>
-                    </li>
-                    <li>
-                        <img src="./img/construindoComDados.jpg" alt="">
-                        <a href="#">Construindo com Dados</a>
-                    </li>
-                    <li>
-                        <img src="./img/desvendandoANuvem.jpg" alt="">
-                        <a href="#">Desvendando a Nuvem</a>
-                    </li>
-                    <li>
-                        <img src="./img/mundoDaProgramacao.jpg" alt="">
-                        <a href="#">Explorando o Mundo da Programação</a>
-                    </li>
-                </ul>
-            </div><!-- /POSTS-MAIS-LIDOS-->
-        </div><!-- /ASIDE-->
+        
     </section>
+    <footer>
+        <div class="footer-wrapper">
+            <img src="./img/logo-footer.png" alt="">
+            <div id="footer-wrapper-middle">
+                <nav>
+                    <ul>
+                        <li><a href="#">Fale conosco</a></li>
+                        <li><a href="#">Sobre nós</a></li>
+                    </ul>
+                </nav>
+                <p>© 2024. Todos os direitos reservados ao WikiDev.<br>
+                    Os materiais aqui encontrados não podem ser publicados, transmitidos, reescritos ou redistribuídos sem autorização.</p>
+            </div><!-- /FOOTER-WRAPPER-MIDDLE-->
+        </div><!-- /FOOTER-WRAPPER-->
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>

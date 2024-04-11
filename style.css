@@ -73,7 +73,7 @@ header #loginBtn:hover{
 }
 .login-container{
     display: none;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -221,10 +221,10 @@ header #loginBtn:hover{
 }
 .post-wrapper{
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /*Define 3 colunas de largura igual*/
+    grid-template-columns: repeat(4, 1fr); /*Define 3 colunas de largura igual*/
     grid-template-rows: repeat(2, 1fr); /*Define 2 linhas de altura auto*/
     gap: 5px; /*Espaçamento entre os elementos*/
-    width: 70%;
+    width: 97%;
     height: 185.7vh;
     margin-left: 30px;
 }
@@ -280,7 +280,6 @@ header #loginBtn:hover{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 25.5%;
 }
 .aside #barra-de-busca{
     width: 291px;
@@ -289,13 +288,13 @@ header #loginBtn:hover{
     color: #848484;
     padding: 20px;
     border: none;
-    box-shadow: 0 2px 5px #00000062;
+    box-shadow: 0 0 5px #0000004b;
     margin-bottom: 30px;
 }
 .aside #categorias{
     background-color: #FFFFFF;
-    box-shadow: 0 2px 5px #00000062;
-    width: 291px;
+    box-shadow: 0 0 5px #0000004b;
+    width: 285px;
     border-radius: 10px 10px 0 0;
 }
 .aside #categorias #titulo{
@@ -325,9 +324,9 @@ header #loginBtn:hover{
 
 .aside #posts-mais-lidos{
     background-color: #FFFFFF;
-    box-shadow: 0 2px 5px #00000062;
-    width: 291px;
-    margin-top: 35px;
+    box-shadow: 0 0 5px #0000004b;
+    height: 545px;
+    width: 285px;
     border-radius: 10px 10px 0 0;
 }
 .aside #posts-mais-lidos #titulo{
@@ -362,6 +361,9 @@ header #loginBtn:hover{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+.aside #posts-mais-lidos ul li:last-child{
+    border-bottom: none;
 }
 .aside #posts-mais-lidos ul li img{
     width: 99px;
