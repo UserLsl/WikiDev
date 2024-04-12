@@ -1,5 +1,11 @@
+<!--NOME DA TABELA NO BANCO DE DADOS = User / Post_Tag
+    CAMPOS DA TABELA NO BANCO DE DADOS = userName / postTag
+    TODAS AS TABELAS E CAMPOS NO BANCO DE DADOS ESTÃO EM INGLES
+    TODAS AS VARIAVEIS EM PHP ESTÃO EM PORTUGUES = nomeUsuario
+    TODOS OS ID E CLASSES EM HTML DEVEM FICAR COM UM TRAÇO E EM PORTUGUES= logo-header-->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +13,9 @@
     <link rel="stylesheet" href="style.css">
     <title>WikiDev</title>
 </head>
+
 <body>
-    <header>
+   <header>
         <img id="logo-header" src="./img/logo-header.png" alt="Logo WikiDev">
         <nav>
             <ul>
@@ -17,22 +24,27 @@
                 <li><a href="#">Tutoriais</a></li>
                 <li><a href="#">Projetos e Desafios</a></li>
                 <li><a href="#">Recursos</a></li>
-                <!--<li><a href="#" id="loginBtn"><i class="fa-solid fa-user"></i>Entrar</a></li>
-                <li><p>
-                    <?php
-                    /*session_start(); 
-                    if (isset($_SESSION['nome'])) {
-                        echo $_SESSION['nome'];
-                    }
-                    //unset( $_SESSION['palavra'] );
-                    //session_destroy();*/
-                    ?>
-                </p></li>-->
+                <?php
+                session_start();
+                if (isset($_SESSION['nome'])) {
+                    echo "<li><a href='#'>Realizar Postagem</a></li>";
+                }
+                ?>
             </ul>
         </nav>
-        <button id="loginBtn">
-            <i class="fa fa-user"></i>Entrar</a>
-        </button>
+        <?php
+        if (isset($_SESSION['nome'])) {
+            echo "<p class='nome-usuario'>" . $_SESSION['nome'] . "</p>";
+            echo "<a href='logout.php' id='logout-btn'>
+                    Sair
+                </a>";
+        } else {
+            echo '<button id="loginBtn">
+                    <i class="fa fa-user"></i>Entrar
+                </button>';
+        }
+        ?>
+
     </header>
     <div class="overlay" id="overlay"></div><!-- /OVERLAY-->
 
@@ -50,7 +62,8 @@
             <div class="box-post-main" id="featured-post">
                 <img src="./img/realidade-digital.png" alt="Uma moça jogando em seu computador.">
                 <h1 class="titulo-box-post-main">Realidade Digital</h1>
-                <h3 class="subtitulo-box-post-main">No universo futurista de "Realidade Digital", mergulhe na imersão total da cibernética.</h3>
+                <h3 class="subtitulo-box-post-main">No universo futurista de "Realidade Digital", mergulhe na imersão
+                    total da cibernética.</h3>
             </div><!-- /FEATURED-POST-->
             <div class="box-post-main secondary-post" id="secondary-post-top">
                 <img src="./img/ascensao-mundial.png" alt="Um dedo tracejando um grafico em crescimento exponencial">
@@ -64,26 +77,34 @@
             </div><!-- /SECONDARY-POST-->
         </div><!-- /BOX-WRAPPER-->
     </section><!-- /MAIN-SECTION-->
-    
+
     <section class="section-wrapper" id="post-section">
         <div class="post-wrapper">
-            <div class="post-container">
+            <a href="postagem.html" class="post-container">
                 <img src="./img/desenvolvimentoDeSoftware.jpg" alt="">
                 <h3 id="title">A Arte do Desenvolvimento de Software</h3>
                 <p id="date">23 Mar, 2024</p>
-                <p id="text">Em "Construindo o Futuro: A Arte do Desenvolvimento de Software", explore os bastidores da criação das tecnologias que impulsionam o nosso mundo. Desde aplicativos móveis até sistemas complexos de back-end, cada linha de código é uma peça crucial na construção de um futuro digital vibrante.</p>
-            </div><!-- /POST-CONTAINER-->
+                <p id="text">Em "Construindo o Futuro: A Arte do Desenvolvimento de Software", explore os bastidores da
+                    criação das tecnologias que impulsionam o nosso mundo. Desde aplicativos móveis até sistemas
+                    complexos de back-end, cada linha de código é uma peça crucial na construção de um futuro digital
+                    vibrante.</p>
+            </a><!-- /POST-CONTAINER-->
             <div class="post-container">
                 <img src="./img/universoJavaScript.jpg" alt="">
                 <h3 id="title">Explorando o Universo JavaScript</h3>
                 <p id="date">23 Mar, 2024</p>
-                <p id="text">Adentre o vasto universo da linguagem JavaScript, onde a fronteira entre web e software é desafiada e redefinida. Neste espaço dedicado ao JavaScript, mergulhe em tutoriais práticos, dicas de codificação eficaz e descobertas sobre as mais recentes inovações. </p>
+                <p id="text">Adentre o vasto universo da linguagem JavaScript, onde a fronteira entre web e software é
+                    desafiada e redefinida. Neste espaço dedicado ao JavaScript, mergulhe em tutoriais práticos, dicas
+                    de codificação eficaz e descobertas sobre as mais recentes inovações. </p>
             </div><!-- /POST-CONTAINER-->
             <div class="post-container">
                 <img src="./img/construindoComDados.jpg" alt="">
                 <h3 id="title">Construindo com Dados</h3>
                 <p id="date">23 Mar, 2024</p>
-                <p id="text">Dê as boas-vindas ao emocionante mundo dos bancos de dados, onde os dados se transformam em insights e a informação é o motor da inovação. Em "Construindo com Dados", mergulhe em tutoriais práticos, estratégias de otimização e tendências emergentes que moldam o cenário dos bancos de dados modernos. </p>
+                <p id="text">Dê as boas-vindas ao emocionante mundo dos bancos de dados, onde os dados se transformam em
+                    insights e a informação é o motor da inovação. Em "Construindo com Dados", mergulhe em tutoriais
+                    práticos, estratégias de otimização e tendências emergentes que moldam o cenário dos bancos de dados
+                    modernos. </p>
             </div><!-- /POST-CONTAINER-->
 
             <div class="aside">
@@ -103,26 +124,34 @@
                     </div><!-- /CATEGORIAS-->
                 </div><!-- /BUSCA-CATEGORIA-ASIDE-->
             </div><!-- /ASIDE-->
-            
+
             <div class="post-container">
                 <img src="./img/desvendandoANuvem.jpg" alt="">
                 <h3 id="title">Desvendando a Nuvem</h3>
                 <p id="date">23 Mar, 2024</p>
-                <p id="text">Em "Desvendando a Nuvem", mergulhe nas camadas do armazenamento digital em nuvem, onde a praticidade encontra a segurança. Explore guias práticos, dicas de otimização e estratégias de backup para dominar o uso eficaz da nuvem. </p>
+                <p id="text">Em "Desvendando a Nuvem", mergulhe nas camadas do armazenamento digital em nuvem, onde a
+                    praticidade encontra a segurança. Explore guias práticos, dicas de otimização e estratégias de
+                    backup para dominar o uso eficaz da nuvem. </p>
             </div><!-- /POST-CONTAINER-->
             <div class="post-container">
                 <img src="./img/mundoDaProgramacao.jpg" alt="">
                 <h3 id="title">Explorando o mundo da programação</h3>
                 <p id="date">23 Mar, 2024</p>
-                <p id="text">Dê os primeiros passos ou avance para o próximo nível com "Codificação em Ação". Neste espaço dinâmico, oferecemos recursos valiosos para todos os programadores, desde iniciantes até veteranos. Descubra tutoriais passo a passo, dicas úteis, entrevistas com especialistas e muito mais.</p>
+                <p id="text">Dê os primeiros passos ou avance para o próximo nível com "Codificação em Ação". Neste
+                    espaço dinâmico, oferecemos recursos valiosos para todos os programadores, desde iniciantes até
+                    veteranos. Descubra tutoriais passo a passo, dicas úteis, entrevistas com especialistas e muito
+                    mais.</p>
             </div><!-- /POST-CONTAINER-->
             <div class="post-container">
                 <img src="./img/BancoDeDados.jpg" alt="">
                 <h3 id="title">Banco de Dados</h3>
                 <p id="date">23 Mar, 2024</p>
-                <p id="text">Dê as boas-vindas ao emocionante mundo dos bancos de dados, onde os dados se transformam em insights e a informação é o motor da inovação. Em "Construindo com Dados", mergulhe em tutoriais práticos, estratégias de otimização e tendências emergentes que moldam o cenário dos bancos de dados modernos.</p>
+                <p id="text">Dê as boas-vindas ao emocionante mundo dos bancos de dados, onde os dados se transformam em
+                    insights e a informação é o motor da inovação. Em "Construindo com Dados", mergulhe em tutoriais
+                    práticos, estratégias de otimização e tendências emergentes que moldam o cenário dos bancos de dados
+                    modernos.</p>
             </div><!-- /POST-CONTAINER-->
-            
+
             <div class="aside">
                 <div id="posts-mais-lidos">
                     <h3 id="titulo">POSTS MAIS LIDOS</h3>
@@ -154,7 +183,7 @@
             <button type="button" id="btn-ver-mais">VER MAIS</button>
 
         </div><!-- /POST-WRAPPER-->
-        
+
     </section>
     <footer>
         <div class="footer-wrapper">
@@ -167,10 +196,12 @@
                     </ul>
                 </nav>
                 <p>© 2024. Todos os direitos reservados ao WikiDev.<br>
-                    Os materiais aqui encontrados não podem ser publicados, transmitidos, reescritos ou redistribuídos sem autorização.</p>
+                    Os materiais aqui encontrados não podem ser publicados, transmitidos, reescritos ou redistribuídos
+                    sem autorização.</p>
             </div><!-- /FOOTER-WRAPPER-MIDDLE-->
         </div><!-- /FOOTER-WRAPPER-->
     </footer>
     <script src="script.js"></script>
 </body>
+
 </html>

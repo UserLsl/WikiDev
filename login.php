@@ -17,9 +17,15 @@ if (isset($_POST['email']) && empty($_POST['email']) == false && isset($_POST['s
                 $_SESSION['nome'] = $user['userName'];
                 echo "<META HTTP-EQUIV=REFRESH CONTENT='0; URL=index.php'>";
             } else {
-                echo "<META HTTP-EQUIV=REFRESH CONTENT='0; URL=index.php'><script type=\"text/javascript\">alert(\"Credenciais Inválidas! \");</script>";
+                echo "<META HTTP-EQUIV=REFRESH CONTENT='0; URL=index.php'>
+                <script type=\"text/javascript\">alert(\"Credenciais Inválidas! \");
+                </script>";
             }
         }
+    } else {
+        echo "<META HTTP-EQUIV=REFRESH CONTENT='0; URL=index.php'>
+        <script type=\"text/javascript\">alert(\"Credenciais Inválidas! \");
+        </script>";
     }
 }
 
