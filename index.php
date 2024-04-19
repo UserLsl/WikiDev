@@ -24,20 +24,21 @@
                 <li><a href="#">Tutoriais</a></li>
                 <li><a href="#">Projetos e Desafios</a></li>
                 <li><a href="#">Recursos</a></li>
-                <?php
-                session_start();
-                if (isset($_SESSION['nome'])) {
-                    echo "<li><a href='#'>Realizar Postagem</a></li>";
-                }
-                ?>
             </ul>
         </nav>
         <?php
+        session_start();
         if (isset($_SESSION['nome'])) {
-            echo "<p class='nome-usuario'>" . $_SESSION['nome'] . "</p>";
-            echo "<a href='logout.php' id='logout-btn'>
-                    Sair
-                </a>";
+            echo "<ul class='dropdown'>
+                    <li><a class='nome-usuario' href='#'>". $_SESSION['nome'] ."<i class='fa-solid fa-angle-down'></i></a>
+                        <ul>
+                            <li><a href='#'>Realizar Postagem</a></li>
+                            <li><a href='logout.php' id='logout-btn'>
+                                    Sair
+                                </a>
+                            </li>
+                        </ul>
+                    </li>";
         } else {
             echo '<button id="loginBtn">
                     <i class="fa fa-user"></i>Entrar
@@ -113,13 +114,18 @@
                     <div id="categorias">
                         <h3 id="titulo">CATEGORIAS</h3>
                         <ul>
-                            <li><a href="#">Desenvolvimento Web</a></li>
-                            <li><a href="#">Linguagens de Programação</a></li>
-                            <li><a href="#">Desenvolvimento Backend</a></li>
-                            <li><a href="#">Desenvolvimento FrontEnd</a></li>
-                            <li><a href="#">FrameWork.net</a></li>
-                            <li><a href="#">JavaScript</a></li>
-                            <li><a href="#">Banco de Dados</a></li>
+                            <?php
+                                require 'config.php';
+                                $sql = "select categoryId, categoryTitle, (select count(*) from post where post.categoryId = Category.categoryId) as qtde from Category order by qtde desc limit 7;";
+
+                                $sql = $pdo->query($sql);
+                                if($sql->rowCount() > 0) {
+                                    foreach($sql->fetchAll() as $row) {
+                                        echo "<li><a href='#".$row['categoryId']."'>".$row['categoryTitle']."</a></li>";
+                                    }
+                                }
+
+                            ?>
                         </ul>
                     </div><!-- /CATEGORIAS-->
                 </div><!-- /BUSCA-CATEGORIA-ASIDE-->

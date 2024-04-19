@@ -63,3 +63,19 @@ select SUBSTRING(categoryTitle, 1, 2) from Category
 select COUNT(*) from Category
 
 select * from Category order by categoryTitle desc 
+
+
+
+--- criando tags
+insert into tag set tagName = "PHP";
+insert into tag set tagName = "Javascript";
+insert into tag set tagName = "CSS";
+insert into tag set tagName = "HTML";
+insert into tag set tagName = "MYSQL";
+insert into tag set tagName = "GIT";
+insert into tag set tagName = "GITHUB";
+insert into tag set tagName = "Responsividade";
+
+insert into post set postBody = "<h4><strong>teste</strong> dakdasdsadsdjaskfjdd</h4></br><p>lorend dksajdaskdj djfkd</p>", postCreatedAt = Now(), categoryId = 1, postImageURL = null, postLikeds = 0, postShareds = 0, postTitle = "Post Teste", userId = 1
+
+select categoryId, categoryTitle, (select count(*) from post where post.categoryId = Category.categoryId) as qtde from Category order by qtde desc limit 7;

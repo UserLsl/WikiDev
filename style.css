@@ -60,35 +60,44 @@ header #loginBtn:hover{
     cursor: pointer;
 }
 
-header #logout-btn{
-    width: 5.5em;
-    height: auto;
-    font-size: 20px;
-    border: none;
-    border-radius: 2px;
-    background-color: #ff1919;
-    color: #FFFFFF;
-}
-header #logout-btn:hover{
-    background-color: #a50404;
-    cursor: pointer;
-}
-header .nome-usuario{
-    color: #FFFFFF;
-    font-size: 17px;
-}
-header #logout-btn{
-    width: 5.5em;
-    height: auto;
-    font-size: 20px;
-    border: none;
-    border-radius: 2px;
-    color: #FFFFFF;
+header .dropdown{
     position: relative;
-    display: inline-block;
-    text-decoration: none;
-    text-align: center;
+    list-style: none;
 }
+header .dropdown .nome-usuario{
+    width: 100%;
+    height: auto;
+    margin-right: 50px;
+    font-size: 20px;
+    border: none;
+    border-radius: 2px;
+    color: #819cff;
+}
+header .dropdown .nome-usuario i{
+    margin-left: 4px;
+    font-size: 16px;
+}
+header .dropdown li ul{
+    position: absolute;
+    left: 0;
+    background-color: #819cff;
+    display: none;
+    text-align: left;
+}
+header .dropdown li ul li{
+    width: 150px;
+    display: block;
+    padding: 7px;
+}
+header .dropdown li ul a{
+    width: 200px;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+header .dropdown li ul li:hover{
+    background-color: #4867df;
+}
+header .dropdown li:hover ul,  .dropdown li.over ul{display: block;}
 
 .overlay{
     display: none;
