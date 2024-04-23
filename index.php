@@ -60,29 +60,43 @@
 
     <section class="section-wrapper" id="main-section">
         <div class="box-wrapper">
-            <div class="box-post-main" id="featured-post">
-                <img src="./img/realidade-digital.png" alt="Uma moça jogando em seu computador.">
-                <h1 class="titulo-box-post-main">Realidade Digital</h1>
-                <h3 class="subtitulo-box-post-main">No universo futurista de "Realidade Digital", mergulhe na imersão
-                    total da cibernética.</h3>
-            </div><!-- /FEATURED-POST-->
-            <div class="box-post-main secondary-post" id="secondary-post-top">
-                <img src="./img/ascensao-mundial.png" alt="Um dedo tracejando um grafico em crescimento exponencial">
-                <h1 class="titulo-box-post-main">Ascensão Mundial</h1>
-                <h3 class="subtitulo-box-post-main">A humanidade em direção a novos patamares.</h3>
-            </div><!-- /SECONDARY-POST-->
-            <div class="box-post-main secondary-post" id="secondary-post-bottom">
-                <img src="./img/alem-das-estrelas.png" alt="Uma moça jogando em seu cumputador.">
-                <h1 class="titulo-box-post-main">Além das Estrelas</h1>
-                <h3 class="subtitulo-box-post-main">As cores vibrantes e a aura mágica que envolvem o planeta.</h3>
-            </div><!-- /SECONDARY-POST-->
-        </div><!-- /BOX-WRAPPER-->
-    </section><!-- /MAIN-SECTION-->
+
+            <?php
+                require 'config.php';
+
+                $sql = 'SELECT postTitle, postImageURL, CONCAT(substring(postBody, 1, 90), "...") as postBody FROM post order by postCreatedAt desc limit 3;';
+                $sql = $pdo->query($sql);
+
+                if ($sql->rowCount() >= 3) {
+                    $results = $sql->fetchAll();
+
+                    echo '
+                    <div class="box-post-main" id="featured-post">
+                        <img src="'.$results[0]['postImageURL'].'" alt="Uma moça jogando em seu computador.">
+                        <h1 class="titulo-box-post-main">'.$results[0]['postTitle'].'</h1>
+                        <h3 class="subtitulo-box-post-main">'.$results[0]['postBody'].'</h3>
+                    </div>';
+                    echo '
+                    <div class="box-post-main secondary-post" id="secondary-post-top">
+                        <img src="'.$results[1]['postImageURL'].'" alt="Um dedo tracejando um grafico em crescimento exponencial">
+                        <h1 class="titulo-box-post-main">'.$results[1]['postTitle'].'</h1>
+                        <h3 class="subtitulo-box-post-main">'.$results[1]['postBody'].'</h3>
+                    </div>';
+                    echo '
+                    <div class="box-post-main secondary-post" id="secondary-post-bottom">
+                        <img src="'.$results[2]['postImageURL'].'" alt="Uma moça jogando em seu cumputador.">
+                        <h1 class="titulo-box-post-main">'.$results[2]['postTitle'].'</h1>
+                        <h3 class="subtitulo-box-post-main">'.$results[2]['postBody'].'</h3>
+                    </div>';
+                }
+            ?>
+        </div>
+    </section>
 
     <section class="section-wrapper" id="post-section">
         <div class="post-wrapper">
             <a href="postagem.html" class="post-container">
-                <img src="./img/desenvolvimentoDeSoftware.jpg" alt="">
+                <img src="https://pronep.s3.amazonaws.com/wp-content/uploads/2022/10/14235834/tecnologia-medicina-2.png" alt="">
                 <h3 id="title">A Arte do Desenvolvimento de Software</h3>
                 <p id="date">23 Mar, 2024</p>
                 <p id="text">Em "Construindo o Futuro: A Arte do Desenvolvimento de Software", explore os bastidores da
@@ -116,9 +130,10 @@
                         <ul>
                             <?php
                                 require 'config.php';
-                                $sql = "select categoryId, categoryTitle, (select count(*) from post where post.categoryId = Category.categoryId) as qtde from Category order by qtde desc limit 7;";
 
+                                $sql = "select categoryId, categoryTitle, (select count(*) from post where post.categoryId = Category.categoryId) as qtde from Category order by qtde desc limit 7;";
                                 $sql = $pdo->query($sql);
+
                                 if($sql->rowCount() > 0) {
                                     foreach($sql->fetchAll() as $row) {
                                         echo "<li><a href='#".$row['categoryId']."'>".$row['categoryTitle']."</a></li>";
@@ -160,28 +175,24 @@
 
             <div class="aside">
                 <div id="posts-mais-lidos">
-                    <h3 id="titulo">POSTS MAIS LIDOS</h3>
+                    <h3 id="titulo">POSTS MAIS CURTIDOS</h3>
                     <ul>
-                        <li>
-                            <img src="./img/desenvolvimentoDeSoftware.jpg" alt="">
-                            <a href="#">A Arte do Desenvolvimento de Software</a>
-                        </li>
-                        <li>
-                            <img src="./img/universoJavaScript.jpg" alt="">
-                            <a href="#">Explorando o Universo JavaScript</a>
-                        </li>
-                        <li>
-                            <img src="./img/construindoComDados.jpg" alt="">
-                            <a href="#">Construindo com Dados</a>
-                        </li>
-                        <li>
-                            <img src="./img/desvendandoANuvem.jpg" alt="">
-                            <a href="#">Desvendando a Nuvem</a>
-                        </li>
-                        <li>
-                            <img src="./img/mundoDaProgramacao.jpg" alt="">
-                            <a href="#">Explorando o Mundo da Programação</a>
-                        </li>
+                        <?php
+                            require 'config.php';
+
+                            $sql = "SELECT postTitle, postImageURL FROM post order by postLikeds desc limit 5;";
+                            $sql = $pdo->query($sql);
+
+                            if ($sql->rowCount() > 0) {
+                                foreach ($sql->fetchAll() as $post) {
+                                    echo
+                                    '<li>
+                                        <img src="'.$post['postImageURL'].'" alt="'.$post['postTitle'].'">
+                                        <a href="postagem.html">'.$post['postTitle'].'</a>
+                                    </li>';
+                                }
+                            }
+                        ?>
                     </ul>
                 </div><!-- /POSTS-MAIS-LIDOS-->
             </div><!-- /ASIDE-->

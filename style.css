@@ -229,7 +229,7 @@ header .dropdown li:hover ul,  .dropdown li.over ul{display: block;}
 
 #main-section .titulo-box-post-main{
     position: absolute;
-    top: 74%;
+    top: 68%;
     left: 6%;
     font-size: 35px;
     font-weight: bolder;
@@ -238,7 +238,7 @@ header .dropdown li:hover ul,  .dropdown li.over ul{display: block;}
 }
 #main-section .subtitulo-box-post-main{
     position: absolute;
-    top: 85%;
+    top: 81%;
     left: 6%;
     font-size: 20px;
     font-weight: 500;
