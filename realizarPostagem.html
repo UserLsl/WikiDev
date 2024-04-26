@@ -48,13 +48,6 @@
     
     <section id="secao-realizar-postagem">
         <div id="envelope-secao-realizar-postagem">
-            <!--
-                Titulo
-                Corpo
-                Categoria
-                Imagem
-                Tags
-            -->
             <h1>Realizar Postagem</h1>
             <hr>
             <p><i>Preencha todos os campos do formulário com os dados da postagem!</i></p>
@@ -72,9 +65,34 @@
     
                     <label for="imagem-postagem">Imagem da postagem:</label>
                     <input type="url" placeholder="Digite o url da imagem do post..." required>
-    
-                    <label for="tag-postagem">Tags da postagem:</label>
-                    <input type="text" id="input-tag-postagem" placeholder="Digite as tags do post...">
+
+                    <label for="caixa-input-checkbox">Tags da postagem:</label>
+                    <div class="caixa-input-checkbox">
+                        <div class="item-checkbox">
+                            <input type="checkbox">
+                            <label for="">PHP</label>
+                        </div>
+                        <div class="item-checkbox">
+                            <input type="checkbox">
+                            <label for="">JavaScript</label>
+                        </div>
+                        <div class="item-checkbox">
+                            <input type="checkbox">
+                            <label for="">CSS</label>
+                        </div>
+                        <div class="item-checkbox">
+                            <input type="checkbox">
+                            <label for="">HTML</label>
+                        </div>
+                        <div class="item-checkbox">
+                            <input type="checkbox">
+                            <label for="">MYSQL</label>
+                        </div>
+                        <div class="item-checkbox">
+                            <input type="checkbox">
+                            <label for="">Responsividade</label>
+                        </div>
+                    </div>
 
                     <button id="btn-formulario" type="submit">Enviar Formulário</button>
                 </form>

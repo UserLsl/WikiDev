@@ -175,6 +175,35 @@ header #loginBtn:hover{
     padding: 10px;
     text-align: flex-start;
 }
+#envelope-secao-realizar-postagem #form-realizar-postagem .caixa-input-checkbox{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+#envelope-secao-realizar-postagem #form-realizar-postagem .caixa-input-checkbox input{
+    border: none;
+    box-shadow: none;
+    margin-bottom: 1px;
+    text-align: flex-start;
+    background-color: #303d74;
+    width: 15%;
+}
+#envelope-secao-realizar-postagem #form-realizar-postagem .caixa-input-checkbox label{
+    font-size: 14px;
+    font-weight: bold;
+    text-align: start;
+    margin-bottom: 1px;
+    width: 85%;
+}
+#envelope-secao-realizar-postagem #form-realizar-postagem .caixa-input-checkbox .item-checkbox{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    width: 18%;
+}
 
 #envelope-secao-realizar-postagem #btn-formulario{
     width: 15vw;

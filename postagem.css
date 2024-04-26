@@ -178,6 +178,7 @@ header #loginBtn:hover{
     padding-bottom: 30px;
     width: 80%;
     border-top: 1px solid #5757576c;
+    cursor: pointer;
 }
 
 .aside{
