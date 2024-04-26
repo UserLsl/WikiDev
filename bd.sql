@@ -114,3 +114,8 @@ select categoryId, categoryTitle, (select count(*) from post where post.category
 SELECT postTitle, postImageURL FROM post order by postLikeds desc limit 5;
 
 SELECT postTitle, postImageURL, CONCAT(substring(postBody, 50), '...') as postBody FROM post order by postCreatedAt desc limit 3;
+
+create view vw_new_posts AS
+SELECT postId, postTitle, postImageURL, CONCAT(substring(postBody, 50), '...') as postBody FROM post order by postCreatedAt desc limit 3;
+
+select * from post where postId not in (select postId from vw_new_posts);

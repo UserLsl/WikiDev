@@ -57,14 +57,14 @@
             <button type="submit">Entrar</button>
         </form>
     </div><!-- /LOGIN-CONTAINER-->
-
+y
     <section class="section-wrapper" id="main-section">
         <div class="box-wrapper">
 
             <?php
                 require 'config.php';
 
-                $sql = 'SELECT postTitle, postImageURL, CONCAT(substring(postBody, 1, 90), "...") as postBody FROM post order by postCreatedAt desc limit 3;';
+                $sql = 'SELECT postTitle, postImageURL, CONCAT(substring(postBody, 1, 90), "...") as postBody FROM vw_new_posts;';
                 $sql = $pdo->query($sql);
 
                 if ($sql->rowCount() >= 3) {
