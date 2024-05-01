@@ -42,7 +42,7 @@ header li a{
     font-size: 17px;
     text-decoration: none;
 }
-header #loginBtn{
+header #login-btn{
     width: 5.5em;
     height: auto;
     font-size: 20px;
@@ -51,16 +51,16 @@ header #loginBtn{
     background-color: #4867df;
     color: #FFFFFF;
 }
-header #loginBtn i{
+header #login-btn i{
     font-size: 0.9em;
     margin-right: 0.5em;
 }
-header #loginBtn:hover{
+header #login-btn:hover{
     background-color: #2d44a0;
     cursor: pointer;
 }
 
-.overlay{
+.fundo-sobreposicao{
     display: none;
     position: fixed;
     top: 0;
@@ -222,14 +222,14 @@ header #loginBtn:hover{
     cursor: pointer;
 }
 
-.aside{
+.lateral{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 25%;
     margin-right: -25px;
 }
-.aside #barra-de-busca{
+.lateral #barra-de-busca{
     width: 291px;
     height: 50px;
     background-color: #FFFFFF;
@@ -239,13 +239,13 @@ header #loginBtn:hover{
     box-shadow: 0 2px 5px #00000062;
     margin-bottom: 30px;
 }
-.aside #categorias{
+.lateral #categorias{
     background-color: #FFFFFF;
     box-shadow: 0 2px 5px #00000062;
     width: 291px;
     border-radius: 10px 10px 0 0;
 }
-.aside #categorias #titulo{
+.lateral #categorias #titulo{
     background-color: #4867df;
     padding: 15.5px;
     color: #FFFFFF;
@@ -253,18 +253,18 @@ header #loginBtn:hover{
     font-weight: 400;
     border-radius: 10px 10px 0 0;
 }
-.aside #categorias ul{
+.lateral #categorias ul{
     list-style: none;
 }
-.aside #categorias ul li{
+.lateral #categorias ul li{
     padding: 17.8px;
     border-bottom: 1px solid #DBDBDB;
     transition: transform 0.3s ease;    /* Transição suave ao passar o mouse */
 }
-.aside #categorias ul li:hover{
+.lateral #categorias ul li:hover{
     transform: scale(1.1);  /* Aumenta o texto em 10%*/
 }
-.aside #categorias ul li a{
+.lateral #categorias ul li a{
     text-decoration: none;
     font-size: 16px;
     color: #000000;
@@ -274,7 +274,7 @@ footer{
     height: auto;
     background-color: #000000;
 }
-.footer-wrapper{
+.envelope-rodape{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -284,7 +284,7 @@ footer img{
     width: 120px;
     height: auto;
 }
-.footer-wrapper #footer-wrapper-middle{
+.envelope-rodape #envelope-rodape-meio{
     width: 70%;
     display: flex;
     flex-direction: column;
@@ -292,24 +292,24 @@ footer img{
     align-items: center;
     text-align: center;
 }
-.footer-wrapper #footer-wrapper-middle nav{
+.envelope-rodape #envelope-rodape-meio nav{
     width: 45%;
 }
-.footer-wrapper #footer-wrapper-middle ul{
+.envelope-rodape #envelope-rodape-meio ul{
     list-style: none;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
-.footer-wrapper #footer-wrapper-middle ul li a{
+.envelope-rodape #envelope-rodape-meio ul li a{
     font-size: 16px;
     color: #FFFFFF;
     text-decoration: none;
 }
-.footer-wrapper #footer-wrapper-middle ul li a:hover{
+.envelope-rodape #envelope-rodape-meio ul li a:hover{
     color: #9db0ff;
 }
-.footer-wrapper #footer-wrapper-middle p{
+.envelope-rodape #envelope-rodape-meio p{
     font-size: 13px;
     margin-top: 20px;
     color: #a3a3a3;

@@ -4,7 +4,7 @@
     TODAS AS VARIAVEIS EM PHP ESTÃO EM PORTUGUES = nomeUsuario
     TODOS OS ID E CLASSES EM HTML DEVEM FICAR COM UM TRAÇO E EM PORTUGUES= logo-header-->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="PT-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -40,16 +40,16 @@
                         </ul>
                     </li>";
         } else {
-            echo '<button id="loginBtn">
+            echo '<button id="login-btn">
                     <i class="fa fa-user"></i>Entrar
                 </button>';
         }
         ?>
 
     </header>
-    <div class="overlay" id="overlay"></div><!-- /OVERLAY-->
+    <div class="fundo-sobreposicao" id="fundo-sobreposicao"></div><!-- /FUNDO-SOBREPOSICAO-->
 
-    <div class="login-container" id="loginContainer">
+    <div class="login-container">
         <form action="login.php" method="post" class="login-form">
             <h2>Acesse sua conta</h2>
             <input name="email" type="email" placeholder="E-mail de Usuário" required>
@@ -58,9 +58,8 @@
         </form>
     </div><!-- /LOGIN-CONTAINER-->
 y
-    <section class="section-wrapper" id="main-section">
-        <div class="box-wrapper">
-
+    <section class="envelope-secao" id="secao-principal">
+        <div class="envelope-caixa">
             <?php
                 require 'config.php';
 
@@ -71,59 +70,59 @@ y
                     $results = $sql->fetchAll();
 
                     echo '
-                    <div class="box-post-main" id="featured-post">
+                    <div class="caixa-post-principal" id="post-destaque">
                         <img src="'.$results[0]['postImageURL'].'" alt="Uma moça jogando em seu computador.">
-                        <h1 class="titulo-box-post-main">'.$results[0]['postTitle'].'</h1>
-                        <h3 class="subtitulo-box-post-main">'.$results[0]['postBody'].'</h3>
+                        <h1 class="titulo-caixa-post-principal">'.$results[0]['postTitle'].'</h1>
+                        <h3 class="subtitulo-caixa-post-principal">'.$results[0]['postBody'].'</h3>
                     </div>';
                     echo '
-                    <div class="box-post-main secondary-post" id="secondary-post-top">
+                    <div class="caixa-post-principal post-secundario" id="post-secundario-topo">
                         <img src="'.$results[1]['postImageURL'].'" alt="Um dedo tracejando um grafico em crescimento exponencial">
-                        <h1 class="titulo-box-post-main">'.$results[1]['postTitle'].'</h1>
-                        <h3 class="subtitulo-box-post-main">'.$results[1]['postBody'].'</h3>
+                        <h1 class="titulo-caixa-post-principal">'.$results[1]['postTitle'].'</h1>
+                        <h3 class="subtitulo-caixa-post-principal">'.$results[1]['postBody'].'</h3>
                     </div>';
                     echo '
-                    <div class="box-post-main secondary-post" id="secondary-post-bottom">
+                    <div class="caixa-post-principal post-secundario" id="post-secundario-base">
                         <img src="'.$results[2]['postImageURL'].'" alt="Uma moça jogando em seu cumputador.">
-                        <h1 class="titulo-box-post-main">'.$results[2]['postTitle'].'</h1>
-                        <h3 class="subtitulo-box-post-main">'.$results[2]['postBody'].'</h3>
+                        <h1 class="titulo-caixa-post-principal">'.$results[2]['postTitle'].'</h1>
+                        <h3 class="subtitulo-caixa-post-principal">'.$results[2]['postBody'].'</h3>
                     </div>';
                 }
             ?>
-        </div>
+        </div><!-- /ENVELOPE-CAIXA -->
     </section>
 
-    <section class="section-wrapper" id="post-section">
-        <div class="post-wrapper">
+    <section class="envelope-secao" id="secao-post">
+        <div class="envelope-post">
             <a href="postagem.html" class="post-container">
                 <img src="https://pronep.s3.amazonaws.com/wp-content/uploads/2022/10/14235834/tecnologia-medicina-2.png" alt="">
-                <h3 id="title">A Arte do Desenvolvimento de Software</h3>
-                <p id="date">23 Mar, 2024</p>
-                <p id="text">Em "Construindo o Futuro: A Arte do Desenvolvimento de Software", explore os bastidores da
+                <h3 id="titulo">A Arte do Desenvolvimento de Software</h3>
+                <p id="data">23 Mar, 2024</p>
+                <p id="texto">Em "Construindo o Futuro: A Arte do Desenvolvimento de Software", explore os bastidores da
                     criação das tecnologias que impulsionam o nosso mundo. Desde aplicativos móveis até sistemas
                     complexos de back-end, cada linha de código é uma peça crucial na construção de um futuro digital
                     vibrante.</p>
             </a><!-- /POST-CONTAINER-->
             <div class="post-container">
                 <img src="./img/universoJavaScript.jpg" alt="">
-                <h3 id="title">Explorando o Universo JavaScript</h3>
-                <p id="date">23 Mar, 2024</p>
-                <p id="text">Adentre o vasto universo da linguagem JavaScript, onde a fronteira entre web e software é
+                <h3 id="titulo">Explorando o Universo JavaScript</h3>
+                <p id="data">23 Mar, 2024</p>
+                <p id="texto">Adentre o vasto universo da linguagem JavaScript, onde a fronteira entre web e software é
                     desafiada e redefinida. Neste espaço dedicado ao JavaScript, mergulhe em tutoriais práticos, dicas
                     de codificação eficaz e descobertas sobre as mais recentes inovações. </p>
             </div><!-- /POST-CONTAINER-->
             <div class="post-container">
                 <img src="./img/construindoComDados.jpg" alt="">
-                <h3 id="title">Construindo com Dados</h3>
-                <p id="date">23 Mar, 2024</p>
-                <p id="text">Dê as boas-vindas ao emocionante mundo dos bancos de dados, onde os dados se transformam em
+                <h3 id="titulo">Construindo com Dados</h3>
+                <p id="data">23 Mar, 2024</p>
+                <p id="texto">Dê as boas-vindas ao emocionante mundo dos bancos de dados, onde os dados se transformam em
                     insights e a informação é o motor da inovação. Em "Construindo com Dados", mergulhe em tutoriais
                     práticos, estratégias de otimização e tendências emergentes que moldam o cenário dos bancos de dados
                     modernos. </p>
             </div><!-- /POST-CONTAINER-->
 
-            <div class="aside">
-                <div id="busca-categoria-aside">
+            <div class="lateral">
+                <div id="busca-categoria-lateral">
                     <input type="search" placeholder="BUSCAR..." id="barra-de-busca">
                     <div id="categorias">
                         <h3 id="titulo">CATEGORIAS</h3>
@@ -143,37 +142,37 @@ y
                             ?>
                         </ul>
                     </div><!-- /CATEGORIAS-->
-                </div><!-- /BUSCA-CATEGORIA-ASIDE-->
-            </div><!-- /ASIDE-->
+                </div><!-- /BUSCA-CATEGORIA-LATERAL-->
+            </div><!-- /LATERAL-->
 
             <div class="post-container">
                 <img src="./img/desvendandoANuvem.jpg" alt="">
-                <h3 id="title">Desvendando a Nuvem</h3>
-                <p id="date">23 Mar, 2024</p>
-                <p id="text">Em "Desvendando a Nuvem", mergulhe nas camadas do armazenamento digital em nuvem, onde a
+                <h3 id="titulo">Desvendando a Nuvem</h3>
+                <p id="data">23 Mar, 2024</p>
+                <p id="texto">Em "Desvendando a Nuvem", mergulhe nas camadas do armazenamento digital em nuvem, onde a
                     praticidade encontra a segurança. Explore guias práticos, dicas de otimização e estratégias de
                     backup para dominar o uso eficaz da nuvem. </p>
             </div><!-- /POST-CONTAINER-->
             <div class="post-container">
                 <img src="./img/mundoDaProgramacao.jpg" alt="">
-                <h3 id="title">Explorando o mundo da programação</h3>
-                <p id="date">23 Mar, 2024</p>
-                <p id="text">Dê os primeiros passos ou avance para o próximo nível com "Codificação em Ação". Neste
+                <h3 id="titulo">Explorando o mundo da programação</h3>
+                <p id="data">23 Mar, 2024</p>
+                <p id="texto">Dê os primeiros passos ou avance para o próximo nível com "Codificação em Ação". Neste
                     espaço dinâmico, oferecemos recursos valiosos para todos os programadores, desde iniciantes até
                     veteranos. Descubra tutoriais passo a passo, dicas úteis, entrevistas com especialistas e muito
                     mais.</p>
             </div><!-- /POST-CONTAINER-->
             <div class="post-container">
                 <img src="./img/BancoDeDados.jpg" alt="">
-                <h3 id="title">Banco de Dados</h3>
-                <p id="date">23 Mar, 2024</p>
-                <p id="text">Dê as boas-vindas ao emocionante mundo dos bancos de dados, onde os dados se transformam em
+                <h3 id="titulo">Banco de Dados</h3>
+                <p id="data">23 Mar, 2024</p>
+                <p id="texto">Dê as boas-vindas ao emocionante mundo dos bancos de dados, onde os dados se transformam em
                     insights e a informação é o motor da inovação. Em "Construindo com Dados", mergulhe em tutoriais
                     práticos, estratégias de otimização e tendências emergentes que moldam o cenário dos bancos de dados
                     modernos.</p>
             </div><!-- /POST-CONTAINER-->
 
-            <div class="aside">
+            <div class="lateral">
                 <div id="posts-mais-lidos">
                     <h3 id="titulo">POSTS MAIS CURTIDOS</h3>
                     <ul>
@@ -195,17 +194,17 @@ y
                         ?>
                     </ul>
                 </div><!-- /POSTS-MAIS-LIDOS-->
-            </div><!-- /ASIDE-->
+            </div><!-- /LATERAL-->
 
             <button type="button" id="btn-ver-mais">VER MAIS</button>
 
-        </div><!-- /POST-WRAPPER-->
+        </div><!-- /envelope-post-->
 
     </section>
     <footer>
-        <div class="footer-wrapper">
+        <div class="envelope-rodape">
             <img src="./img/logo-footer.png" alt="">
-            <div id="footer-wrapper-middle">
+            <div id="envelope-rodape-meio">
                 <nav>
                     <ul>
                         <li><a href="#">Fale conosco</a></li>
@@ -215,8 +214,8 @@ y
                 <p>© 2024. Todos os direitos reservados ao WikiDev.<br>
                     Os materiais aqui encontrados não podem ser publicados, transmitidos, reescritos ou redistribuídos
                     sem autorização.</p>
-            </div><!-- /FOOTER-WRAPPER-MIDDLE-->
-        </div><!-- /FOOTER-WRAPPER-->
+            </div><!-- /ENVELOPE-RODAPE-meio-->
+        </div><!-- /ENVELOPE-RODAPE-->
     </footer>
     <script src="script.js"></script>
 </body>

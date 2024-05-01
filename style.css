@@ -42,7 +42,7 @@ header li a{
     font-size: 17px;
     text-decoration: none;
 }
-header #loginBtn{
+header #login-btn{
     width: 5.5em;
     height: auto;
     font-size: 20px;
@@ -51,11 +51,11 @@ header #loginBtn{
     background-color: #4867df;
     color: #FFFFFF;
 }
-header #loginBtn i{
+header #login-btn i{
     font-size: 0.9em;
     margin-right: 0.5em;
 }
-header #loginBtn:hover{
+header #login-btn:hover{
     background-color: #2d44a0;
     cursor: pointer;
 }
@@ -99,7 +99,7 @@ header .dropdown li ul li:hover{
 }
 header .dropdown li:hover ul,  .dropdown li.over ul{display: block;}
 
-.overlay{
+.fundo-sobreposicao{
     display: none;
     position: fixed;
     top: 0;
@@ -151,7 +151,7 @@ header .dropdown li:hover ul,  .dropdown li.over ul{display: block;}
     background-color: rgb(94, 1, 122);
 }
 
-#main-section{
+#secao-principal{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -159,7 +159,7 @@ header .dropdown li:hover ul,  .dropdown li.over ul{display: block;}
     padding-top: 4.8em;
     background-color: #121214;
 }
-#main-section .box-wrapper{
+#secao-principal .envelope-caixa{
     display: grid;
     grid-template-areas: 
     "a b"
@@ -171,11 +171,11 @@ header .dropdown li:hover ul,  .dropdown li.over ul{display: block;}
     height: 87%;
     width: 80%;
 }
-.box-post-main{
+.caixa-post-principal{
     width: 100%;
     position: relative;
 }
-#main-section #featured-post{
+#secao-principal #post-destaque{
     grid-area: a;
     width: 530px;
     height: 450px;
@@ -183,37 +183,37 @@ header .dropdown li:hover ul,  .dropdown li.over ul{display: block;}
     overflow: hidden;   /* Para evitar que a imagem cresça para fora da caixa */
     transition: transform 0.3s ease;    /* Transição suave ao passar o mouse */
 }
-#main-section #featured-post img{
+#secao-principal #post-destaque img{
     width: 530px;
     height: 450px;
     object-fit: cover;
     object-position: 100% ;
 }
-#main-section #featured-post:hover{
+#secao-principal #post-destaque:hover{
     transform: scale(1.05);  /* Aumenta a imagem em 5% */
 }
-#main-section #secondary-post-top{
+#secao-principal #post-secundario-topo{
     grid-area: b;
     display: inline-block;  /* Para que a caixa se ajuste ao tamanho da imagem */
     overflow: hidden;   /* Para evitar que a imagem cresça para fora da caixa */
     transition: transform 0.3s ease;    /* Transição suave ao passar o mouse */
 }
-#main-section #secondary-post-top:hover{
+#secao-principal #post-secundario-topo:hover{
     transform: scale(1.05);  /* Aumenta a imagem em 5% */
 }
-#main-section #secondary-post-top{
+#secao-principal #post-secundario-topo{
     margin-bottom: 21px;
 }
-#main-section #secondary-post-bottom{
+#secao-principal #post-secundario-base{
     grid-area: c;
     display: inline-block;  /* Para que a caixa se ajuste ao tamanho da imagem */
     overflow: hidden;   /* Para evitar que a imagem cresça para fora da caixa */
     transition: transform 0.3s ease;    /* Transição suave ao passar o mouse */
 }
-#main-section #secondary-post-bottom:hover{
+#secao-principal #post-secundario-base:hover{
     transform: scale(1.05);  /* Aumenta a imagem em 5% */
 }
-#main-section #secondary-post-top, #main-section #secondary-post-bottom{
+#secao-principal #post-secundario-topo, #secao-principal #post-secundario-base{
     width: 418px;
     height: 214px;
     display: flex;
@@ -222,12 +222,12 @@ header .dropdown li:hover ul,  .dropdown li.over ul{display: block;}
     padding: 0;
     margin-left: 20px;
 }
-#main-section #secondary-post-top img, #main-section #secondary-post-bottom img{
+#secao-principal #post-secundario-topo img, #secao-principal #post-secundario-base img{
     width: 418px;
     height: 214px;
 }
 
-#main-section .titulo-box-post-main{
+#secao-principal .titulo-caixa-post-principal{
     position: absolute;
     top: 68%;
     left: 6%;
@@ -236,7 +236,7 @@ header .dropdown li:hover ul,  .dropdown li.over ul{display: block;}
     color: #FFFFFF;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
 }
-#main-section .subtitulo-box-post-main{
+#secao-principal .subtitulo-caixa-post-principal{
     position: absolute;
     top: 81%;
     left: 6%;
@@ -245,20 +245,20 @@ header .dropdown li:hover ul,  .dropdown li.over ul{display: block;}
     color: #FFFFFF;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
 }
-#main-section .secondary-post .titulo-box-post-main{
+#secao-principal .post-secundario .titulo-caixa-post-principal{
     font-size: 18px;
 }
-#main-section .secondary-post .subtitulo-box-post-main{
+#secao-principal .post-secundario .subtitulo-caixa-post-principal{
     font-size: 14px;
 }
 
-#post-section{
+#secao-post{
     display: flex;
     background-color: #dce3ff;
     height: 193vh;
     padding-top: 30px;
 }
-.post-wrapper{
+.envelope-post{
     display: grid;
     grid-template-columns: repeat(4, 1fr); /*Define 3 colunas de largura igual*/
     grid-template-rows: repeat(2, 1fr); /*Define 2 linhas de altura auto*/
@@ -267,7 +267,7 @@ header .dropdown li:hover ul,  .dropdown li.over ul{display: block;}
     height: 100%;
     margin-left: 30px;
 }
-.post-wrapper #btn-ver-mais{
+.envelope-post #btn-ver-mais{
     width: 9em;
     height: auto;
     margin-left: 117.5%;
@@ -278,7 +278,7 @@ header .dropdown li:hover ul,  .dropdown li.over ul{display: block;}
     background-color: #4867df;
     color: #FFFFFF;
 }
-.post-wrapper #btn-ver-mais:hover{
+.envelope-post #btn-ver-mais:hover{
     background-color: #2d44a0;
     cursor: pointer;
 }
@@ -299,33 +299,33 @@ header .dropdown li:hover ul,  .dropdown li.over ul{display: block;}
     height: 170px;
     margin-bottom: 10px;
 }
-.post-container #title{
+.post-container #titulo{
     font-size: 16px;
     font-weight: bold;
     margin: auto;
     margin-bottom: 10px;
     width: 90%;
 }
-.post-container #date{
+.post-container #data{
     font-size: 14px;
     width: 90%;
     margin: auto;
     margin-bottom: 10px;
     font-weight: lighter;
 }
-.post-container #text{
+.post-container #texto{
     font-size: 16px;
     width: 90%;
     margin: auto;
     line-height: 22px;
 }
 
-.aside{
+.lateral{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.aside #barra-de-busca{
+.lateral #barra-de-busca{
     width: 291px;
     height: 50px;
     background-color: #FFFFFF;
@@ -335,13 +335,13 @@ header .dropdown li:hover ul,  .dropdown li.over ul{display: block;}
     box-shadow: 0 0 5px #0000004b;
     margin-bottom: 30px;
 }
-.aside #categorias{
+.lateral #categorias{
     background-color: #FFFFFF;
     box-shadow: 0 0 5px #0000004b;
     width: 285px;
     border-radius: 10px 10px 0 0;
 }
-.aside #categorias #titulo{
+.lateral #categorias #titulo{
     background-color: #4867df;
     padding: 15.5px;
     color: #FFFFFF;
@@ -349,31 +349,31 @@ header .dropdown li:hover ul,  .dropdown li.over ul{display: block;}
     font-weight: 400;
     border-radius: 10px 10px 0 0;
 }
-.aside #categorias ul{
+.lateral #categorias ul{
     list-style: none;
 }
-.aside #categorias ul li{
+.lateral #categorias ul li{
     padding: 17.8px;
     border-bottom: 1px solid #DBDBDB;
     transition: transform 0.3s ease;    /* Transição suave ao passar o mouse */
 }
-.aside #categorias ul li:hover{
+.lateral #categorias ul li:hover{
     transform: scale(1.1);  /* Aumenta o texto em 10%*/
 }
-.aside #categorias ul li a{
+.lateral #categorias ul li a{
     text-decoration: none;
     font-size: 16px;
     color: #000000;
 }
 
-.aside #posts-mais-lidos{
+.lateral #posts-mais-lidos{
     background-color: #FFFFFF;
     box-shadow: 0 0 5px #0000004b;
     height: 545px;
     width: 285px;
     border-radius: 10px 10px 0 0;
 }
-.aside #posts-mais-lidos #titulo{
+.lateral #posts-mais-lidos #titulo{
     background-color: #4867df;
     padding: 15.5px;
     color: #FFFFFF;
@@ -381,24 +381,24 @@ header .dropdown li:hover ul,  .dropdown li.over ul{display: block;}
     font-weight: 400;
     border-radius: 10px 10px 0 0;
 }
-.aside #posts-mais-lidos ul{
+.lateral #posts-mais-lidos ul{
     list-style: none;
 }
-.aside #posts-mais-lidos ul li:first-child{
+.lateral #posts-mais-lidos ul li:first-child{
     height: 141.5px;
     display: flex;
     flex-direction: column;
 }
-.aside #posts-mais-lidos ul li:first-child img{
+.lateral #posts-mais-lidos ul li:first-child img{
     height: 87px;
     width: 140px;
 }
-.aside #posts-mais-lidos ul li:first-child a{
+.lateral #posts-mais-lidos ul li:first-child a{
     font-size: 16px;
     font-weight: bold;
     width: 100%;
 }
-.aside #posts-mais-lidos ul li{
+.lateral #posts-mais-lidos ul li{
     padding: 11.75px;
     border-bottom: 1px solid #DBDBDB;
     transition: transform 0.3s ease;    /* Transição suave ao passar o mouse */
@@ -406,17 +406,17 @@ header .dropdown li:hover ul,  .dropdown li.over ul{display: block;}
     flex-direction: row;
     justify-content: space-between;
 }
-.aside #posts-mais-lidos ul li:last-child{
+.lateral #posts-mais-lidos ul li:last-child{
     border-bottom: none;
 }
-.aside #posts-mais-lidos ul li img{
+.lateral #posts-mais-lidos ul li img{
     width: 99px;
     height: 57px;
 }
-.aside #posts-mais-lidos ul li:hover{
+.lateral #posts-mais-lidos ul li:hover{
     transform: scale(1.05);  /* Aumenta o texto em 10%*/
 }
-.aside #posts-mais-lidos ul li a{
+.lateral #posts-mais-lidos ul li a{
     text-decoration: none;
     font-size: 16px;
     width: 60%;
@@ -427,7 +427,7 @@ footer{
     height: auto;
     background-color: #000000;
 }
-.footer-wrapper{
+.envelope-rodape{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -437,7 +437,7 @@ footer img{
     width: 120px;
     height: auto;
 }
-.footer-wrapper #footer-wrapper-middle{
+.envelope-rodape #envelope-rodape-meio{
     width: 70%;
     display: flex;
     flex-direction: column;
@@ -445,24 +445,24 @@ footer img{
     align-items: center;
     text-align: center;
 }
-.footer-wrapper #footer-wrapper-middle nav{
+.envelope-rodape #envelope-rodape-meio nav{
     width: 45%;
 }
-.footer-wrapper #footer-wrapper-middle ul{
+.envelope-rodape #envelope-rodape-meio ul{
     list-style: none;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
-.footer-wrapper #footer-wrapper-middle ul li a{
+.envelope-rodape #envelope-rodape-meio ul li a{
     font-size: 16px;
     color: #FFFFFF;
     text-decoration: none;
 }
-.footer-wrapper #footer-wrapper-middle ul li a:hover{
+.envelope-rodape #envelope-rodape-meio ul li a:hover{
     color: #9db0ff;
 }
-.footer-wrapper #footer-wrapper-middle p{
+.envelope-rodape #envelope-rodape-meio p{
     font-size: 13px;
     margin-top: 20px;
     color: #a3a3a3;
