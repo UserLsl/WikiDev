@@ -110,7 +110,7 @@ header .dropdown li:hover ul,  .dropdown li.over ul{display: block;}
     backdrop-filter: blur(10px);
     z-index: 1000;
 }
-.login-container{
+#loginContainer{
     display: none;
     position: fixed;
     top: 50%;
@@ -122,7 +122,7 @@ header .dropdown li:hover ul,  .dropdown li.over ul{display: block;}
     border-radius: 8px;
     z-index: 1001;
 }
-.login-container h2{
+#loginContainer h2{
     color: #fff;
     font-size: 35px;
     margin-bottom: 30px;

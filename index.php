@@ -49,7 +49,7 @@
     </header>
     <div class="fundo-sobreposicao" id="fundo-sobreposicao"></div><!-- /FUNDO-SOBREPOSICAO-->
 
-    <div class="login-container">
+    <div class="login-container" id="loginContainer">
         <form action="login.php" method="post" class="login-form">
             <h2>Acesse sua conta</h2>
             <input name="email" type="email" placeholder="E-mail de Usuário" required>
@@ -63,7 +63,7 @@ y
             <?php
                 require 'config.php';
 
-                $sql = 'SELECT postTitle, postImageURL, CONCAT(substring(postBody, 1, 90), "...") as postBody FROM vw_new_posts;';
+                $sql = 'SELECT postTitle, postImageURL, CONCAT(substring(postBody, 1, 90), "...") as postBody FROM post;';
                 $sql = $pdo->query($sql);
 
                 if ($sql->rowCount() >= 3) {
