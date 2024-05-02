@@ -120,31 +120,6 @@ y
                     práticos, estratégias de otimização e tendências emergentes que moldam o cenário dos bancos de dados
                     modernos. </p>
             </div><!-- /POST-CONTAINER-->
-
-            <div class="lateral">
-                <div id="busca-categoria-lateral">
-                    <input type="search" placeholder="BUSCAR..." id="barra-de-busca">
-                    <div id="categorias">
-                        <h3 id="titulo">CATEGORIAS</h3>
-                        <ul>
-                            <?php
-                                require 'config.php';
-
-                                $sql = "select categoryId, categoryTitle, (select count(*) from post where post.categoryId = Category.categoryId) as qtde from Category order by qtde desc limit 7;";
-                                $sql = $pdo->query($sql);
-
-                                if($sql->rowCount() > 0) {
-                                    foreach($sql->fetchAll() as $row) {
-                                        echo "<li><a href='#".$row['categoryId']."'>".$row['categoryTitle']."</a></li>";
-                                    }
-                                }
-
-                            ?>
-                        </ul>
-                    </div><!-- /CATEGORIAS-->
-                </div><!-- /BUSCA-CATEGORIA-LATERAL-->
-            </div><!-- /LATERAL-->
-
             <div class="post-container">
                 <img src="./img/desvendandoANuvem.jpg" alt="">
                 <h3 id="titulo">Desvendando a Nuvem</h3>
@@ -172,33 +147,58 @@ y
                     modernos.</p>
             </div><!-- /POST-CONTAINER-->
 
-            <div class="lateral">
-                <div id="posts-mais-lidos">
-                    <h3 id="titulo">POSTS MAIS CURTIDOS</h3>
-                    <ul>
-                        <?php
-                            require 'config.php';
-
-                            $sql = "SELECT postTitle, postImageURL FROM post order by postLikeds desc limit 5;";
-                            $sql = $pdo->query($sql);
-
-                            if ($sql->rowCount() > 0) {
-                                foreach ($sql->fetchAll() as $post) {
-                                    echo
-                                    '<li>
-                                        <img src="'.$post['postImageURL'].'" alt="'.$post['postTitle'].'">
-                                        <a href="postagem.html">'.$post['postTitle'].'</a>
-                                    </li>';
-                                }
-                            }
-                        ?>
-                    </ul>
-                </div><!-- /POSTS-MAIS-LIDOS-->
-            </div><!-- /LATERAL-->
-
             <button type="button" id="btn-ver-mais">VER MAIS</button>
 
         </div><!-- /envelope-post-->
+       
+        <div class="envelope-lateral">
+            <div class="lateral">
+                    <div id="busca-categoria-lateral">
+                        <input type="search" placeholder="BUSCAR..." id="barra-de-busca">
+                        <div id="categorias">
+                            <h3 id="titulo">CATEGORIAS</h3>
+                            <ul>
+                                <?php
+                                    require 'config.php';
+    
+                                    $sql = "select categoryId, categoryTitle, (select count(*) from post where post.categoryId = Category.categoryId) as qtde from Category order by qtde desc limit 7;";
+                                    $sql = $pdo->query($sql);
+    
+                                    if($sql->rowCount() > 0) {
+                                        foreach($sql->fetchAll() as $row) {
+                                            echo "<li><a href='#".$row['categoryId']."'>".$row['categoryTitle']."</a></li>";
+                                        }
+                                    }
+                                ?>
+                            </ul>
+                        </div><!-- /CATEGORIAS-->
+                    </div><!-- /BUSCA-CATEGORIA-LATERAL-->
+                </div><!-- /LATERAL-->
+                
+                <div class="lateral">
+                    <div id="posts-mais-lidos">
+                        <h3 id="titulo">POSTS MAIS CURTIDOS</h3>
+                        <ul>
+                            <?php
+                                require 'config.php';
+    
+                                $sql = "SELECT postTitle, postImageURL FROM post order by postLikeds desc limit 5;";
+                                $sql = $pdo->query($sql);
+    
+                                if ($sql->rowCount() > 0) {
+                                    foreach ($sql->fetchAll() as $post) {
+                                        echo
+                                        '<li>
+                                            <img src="'.$post['postImageURL'].'" alt="'.$post['postTitle'].'">
+                                            <a href="postagem.html">'.$post['postTitle'].'</a>
+                                        </li>';
+                                    }
+                                }
+                            ?>
+                        </ul>
+                    </div><!-- /POSTS-MAIS-LIDOS-->
+                </div><!-- /LATERAL-->
+        </div>
 
     </section>
     <footer>

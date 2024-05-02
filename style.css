@@ -253,16 +253,18 @@ header .dropdown li:hover ul,  .dropdown li.over ul{display: block;}
 }
 
 #secao-post{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
     background-color: #dce3ff;
     height: 193vh;
     padding-top: 30px;
 }
 .envelope-post{
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /*Define 3 colunas de largura igual*/
+    grid-template-columns: repeat(3, 1fr); /*Define 3 colunas de largura igual*/
     grid-template-rows: repeat(2, 1fr); /*Define 2 linhas de altura auto*/
-    gap: 5px; /*Espaçamento entre os elementos*/
+    gap: 25px; /*Espaçamento entre os elementos*/
     width: 97%;
     height: 100%;
     margin-left: 30px;
@@ -320,10 +322,19 @@ header .dropdown li:hover ul,  .dropdown li.over ul{display: block;}
     line-height: 22px;
 }
 
+.envelope-lateral{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /*Define 3 colunas de largura igual*/
+    grid-template-rows: repeat(2, 1fr); /*Define 2 linhas de altura auto*/
+    gap: 1px; /*Espaçamento entre os elementos*/
+    width: 97%;
+    height: 94%;
+}
 .lateral{
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 .lateral #barra-de-busca{
     width: 291px;
@@ -369,7 +380,7 @@ header .dropdown li:hover ul,  .dropdown li.over ul{display: block;}
 .lateral #posts-mais-lidos{
     background-color: #FFFFFF;
     box-shadow: 0 0 5px #0000004b;
-    height: 545px;
+    height: 547px;
     width: 285px;
     border-radius: 10px 10px 0 0;
 }
