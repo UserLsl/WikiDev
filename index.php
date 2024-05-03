@@ -94,60 +94,32 @@ y
 
     <section class="envelope-secao" id="secao-post">
         <div class="envelope-post">
-            <a href="postagem.html" class="post-container">
-                <img src="https://pronep.s3.amazonaws.com/wp-content/uploads/2022/10/14235834/tecnologia-medicina-2.png" alt="">
-                <h3 id="titulo">A Arte do Desenvolvimento de Software</h3>
-                <p id="data">23 Mar, 2024</p>
-                <p id="texto">Em "Construindo o Futuro: A Arte do Desenvolvimento de Software", explore os bastidores da
-                    criação das tecnologias que impulsionam o nosso mundo. Desde aplicativos móveis até sistemas
-                    complexos de back-end, cada linha de código é uma peça crucial na construção de um futuro digital
-                    vibrante.</p>
-            </a><!-- /POST-CONTAINER-->
-            <div class="post-container">
-                <img src="./img/universoJavaScript.jpg" alt="">
-                <h3 id="titulo">Explorando o Universo JavaScript</h3>
-                <p id="data">23 Mar, 2024</p>
-                <p id="texto">Adentre o vasto universo da linguagem JavaScript, onde a fronteira entre web e software é
-                    desafiada e redefinida. Neste espaço dedicado ao JavaScript, mergulhe em tutoriais práticos, dicas
-                    de codificação eficaz e descobertas sobre as mais recentes inovações. </p>
-            </div><!-- /POST-CONTAINER-->
-            <div class="post-container">
-                <img src="./img/construindoComDados.jpg" alt="">
-                <h3 id="titulo">Construindo com Dados</h3>
-                <p id="data">23 Mar, 2024</p>
-                <p id="texto">Dê as boas-vindas ao emocionante mundo dos bancos de dados, onde os dados se transformam em
-                    insights e a informação é o motor da inovação. Em "Construindo com Dados", mergulhe em tutoriais
-                    práticos, estratégias de otimização e tendências emergentes que moldam o cenário dos bancos de dados
-                    modernos. </p>
-            </div><!-- /POST-CONTAINER-->
-            <div class="post-container">
-                <img src="./img/desvendandoANuvem.jpg" alt="">
-                <h3 id="titulo">Desvendando a Nuvem</h3>
-                <p id="data">23 Mar, 2024</p>
-                <p id="texto">Em "Desvendando a Nuvem", mergulhe nas camadas do armazenamento digital em nuvem, onde a
-                    praticidade encontra a segurança. Explore guias práticos, dicas de otimização e estratégias de
-                    backup para dominar o uso eficaz da nuvem. </p>
-            </div><!-- /POST-CONTAINER-->
-            <div class="post-container">
-                <img src="./img/mundoDaProgramacao.jpg" alt="">
-                <h3 id="titulo">Explorando o mundo da programação</h3>
-                <p id="data">23 Mar, 2024</p>
-                <p id="texto">Dê os primeiros passos ou avance para o próximo nível com "Codificação em Ação". Neste
-                    espaço dinâmico, oferecemos recursos valiosos para todos os programadores, desde iniciantes até
-                    veteranos. Descubra tutoriais passo a passo, dicas úteis, entrevistas com especialistas e muito
-                    mais.</p>
-            </div><!-- /POST-CONTAINER-->
-            <div class="post-container">
-                <img src="./img/BancoDeDados.jpg" alt="">
-                <h3 id="titulo">Banco de Dados</h3>
-                <p id="data">23 Mar, 2024</p>
-                <p id="texto">Dê as boas-vindas ao emocionante mundo dos bancos de dados, onde os dados se transformam em
-                    insights e a informação é o motor da inovação. Em "Construindo com Dados", mergulhe em tutoriais
-                    práticos, estratégias de otimização e tendências emergentes que moldam o cenário dos bancos de dados
-                    modernos.</p>
-            </div><!-- /POST-CONTAINER-->
 
-            <button type="button" id="btn-ver-mais">VER MAIS</button>
+            <?php
+                require 'config.php';
+                
+                $qtde = 6;
+                if (isset($_GET['qtde'])) {
+                    $qtde =  $_GET['qtde'];
+                }
+
+                $sql = 'SELECT postId, postTitle, postImageURL, CONCAT(substring(postBody, 1, 360), "...") as postBody, postCreatedAt FROM post limit '.$qtde.';';
+                $sql = $pdo->query($sql);
+
+                if ($sql->rowCount() > 0) {
+                    foreach ($sql->fetchAll() as $post) {
+                        echo '<a href="postagem.php?id='.$post['postId'].'" class="post-container">
+                            <img src="'.$post['postImageURL'].'" alt="">
+                            <h3 id="titulo">'.$post['postTitle'].'</h3>
+                            <p id="data">'.$post['postCreatedAt'].'</p>
+                            <p id="texto">'.$post['postBody'].'</p>
+                        </a>';
+                    }
+                }
+
+                $qtde = $qtde + 3;
+                echo '<a href="index.php?qtde='.$qtde.'" id="btn-ver-mais">VER MAIS</a>'
+            ?>
 
         </div><!-- /envelope-post-->
        

@@ -119,3 +119,6 @@ create view vw_new_posts AS
 SELECT postId, postTitle, postImageURL, CONCAT(substring(postBody, 50), '...') as postBody FROM post order by postCreatedAt desc limit 3;
 
 select * from post where postId not in (select postId from vw_new_posts);
+
+
+select * from post inner join user on user.userId = post.userId
