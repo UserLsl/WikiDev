@@ -24,6 +24,7 @@
                 <li><a href="#">Tutoriais</a></li>
                 <li><a href="#">Projetos e Desafios</a></li>
                 <li><a href="#">Recursos</a></li>
+                <li style="display: none"><a href="#">Home</a></li>
             </ul>
         </nav>
         <?php
