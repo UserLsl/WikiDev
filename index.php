@@ -24,9 +24,9 @@
                 <li><a href="#">Tutoriais</a></li>
                 <li><a href="#">Projetos e Desafios</a></li>
                 <li><a href="#">Recursos</a></li>
-                <li style="display: none"><a href="#">Home</a></li>
             </ul>
         </nav>
+        <a id="btn-home" href="#">Home</a>
         <?php
         session_start();
         if (isset($_SESSION['nome'])) {
@@ -104,13 +104,13 @@ y
                     $qtde =  $_GET['qtde'];
                 }
 
-                $sql = 'SELECT postId, postTitle, postImageURL, CONCAT(substring(postBody, 1, 360), "...") as postBody, postCreatedAt FROM post limit '.$qtde.';';
+                $sql = 'SELECT postId, postTitle, postImageURL, CONCAT(substring(postBody, 1, 360)) as postBody, postCreatedAt FROM post limit '.$qtde.';';
                 $sql = $pdo->query($sql);
 
                 if ($sql->rowCount() > 0) {
                     foreach ($sql->fetchAll() as $post) {
                         echo '<a href="postagem.php?id='.$post['postId'].'" class="post-container">
-                            <img src="'.$post['postImageURL'].'" alt="">
+                            <img id = "imagem-postagem" src="'.$post['postImageURL'].'" alt="">
                             <h3 id="titulo">'.$post['postTitle'].'</h3>
                             <p id="data">'.$post['postCreatedAt'].'</p>
                             <p id="texto">'.$post['postBody'].'</p>
@@ -126,7 +126,6 @@ y
        
         <div class="envelope-lateral">
             <div class="lateral">
-                    <div id="busca-categoria-lateral">
                         <input type="search" placeholder="BUSCAR..." id="barra-de-busca">
                         <div id="categorias">
                             <h3 id="titulo">CATEGORIAS</h3>
@@ -145,11 +144,7 @@ y
                                 ?>
                             </ul>
                         </div><!-- /CATEGORIAS-->
-                    </div><!-- /BUSCA-CATEGORIA-LATERAL-->
-                </div><!-- /LATERAL-->
-                
-                <div class="lateral">
-                    <div id="posts-mais-lidos">
+                        <div id="posts-mais-lidos">
                         <h3 id="titulo">POSTS MAIS CURTIDOS</h3>
                         <ul>
                             <?php
@@ -171,7 +166,7 @@ y
                         </ul>
                     </div><!-- /POSTS-MAIS-LIDOS-->
                 </div><!-- /LATERAL-->
-        </div>
+        </div><!-- /ENVELOPE-LATERAL-->
 
     </section>
     <footer>
