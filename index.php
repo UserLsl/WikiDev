@@ -64,30 +64,30 @@ y
             <?php
                 require 'config.php';
 
-                $sql = 'SELECT postTitle, postImageURL, CONCAT(substring(postBody, 1, 90), "...") as postBody FROM post;';
+                $sql = 'SELECT postId, postTitle, postImageURL, CONCAT(substring(postBody, 1, 90), "...") as postBody FROM post;';
                 $sql = $pdo->query($sql);
 
                 if ($sql->rowCount() >= 3) {
                     $results = $sql->fetchAll();
 
                     echo '
-                    <div class="caixa-post-principal" id="post-destaque">
+                    <a href="postagem.php?id='.$results[0]['postId'].'" class="caixa-post-principal" id="post-destaque">
                         <img src="'.$results[0]['postImageURL'].'" alt="Uma moça jogando em seu computador.">
                         <h1 class="titulo-caixa-post-principal">'.$results[0]['postTitle'].'</h1>
                         <h3 class="subtitulo-caixa-post-principal">'.$results[0]['postBody'].'</h3>
-                    </div>';
+                    </a>';
                     echo '
-                    <div class="caixa-post-principal post-secundario" id="post-secundario-topo">
+                    <a href="postagem.php?id='.$results[1]['postId'].'" class="caixa-post-principal post-secundario" id="post-secundario-topo">
                         <img src="'.$results[1]['postImageURL'].'" alt="Um dedo tracejando um grafico em crescimento exponencial">
                         <h1 class="titulo-caixa-post-principal">'.$results[1]['postTitle'].'</h1>
                         <h3 class="subtitulo-caixa-post-principal">'.$results[1]['postBody'].'</h3>
-                    </div>';
+                    </a>';
                     echo '
-                    <div class="caixa-post-principal post-secundario" id="post-secundario-base">
+                    <a href="postagem.php?id='.$results[2]['postId'].'" class="caixa-post-principal post-secundario" id="post-secundario-base">
                         <img src="'.$results[2]['postImageURL'].'" alt="Uma moça jogando em seu cumputador.">
                         <h1 class="titulo-caixa-post-principal">'.$results[2]['postTitle'].'</h1>
                         <h3 class="subtitulo-caixa-post-principal">'.$results[2]['postBody'].'</h3>
-                    </div>';
+                    </a>';
                 }
             ?>
         </div><!-- /ENVELOPE-CAIXA -->

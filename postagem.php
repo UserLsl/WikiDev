@@ -4,8 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/c84d6546c9.js" crossorigin="anonymous"></script>
+    <script lang="Javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="postagem.css">
     <title>WikiDev</title>
+     <script>
+        $(document).ready(function() { 
+            var href = window.location.href;
+
+            if (href.substr(href.length - 5) == '#like') {
+                document.getElementById('icone-like').classList.replace('fa-regular', 'fa-solid');
+                document.getElementById('icone-like').style.color = '#2d44a0';
+                document.getElementById('like').href = "#like";
+            }
+        });
+    </script> 
 </head>
 <body>
     <header>
@@ -55,7 +67,7 @@
                         </div>';
                     echo '<img src="'.$post[0]['postImageURL'].'" alt="">';
                     echo '<p id="texto">'.$post[0]['postBody'].'</p>';
-                    echo '<a id="like"> Curtir: <i id="icone-like" class="fa-regular fa-heart"></i></i></a>';
+                    echo '<a href="like.php?postId='.$post[0]['postId'].'" id="like"> Curtir: <i id="icone-like" class="fa-regular fa-heart">'.$post[0]['postLikeds'].'</i></a>';
                 }
             ?>
                 
