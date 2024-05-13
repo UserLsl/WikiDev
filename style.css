@@ -2,7 +2,6 @@
     font-family: OpenSans;
     src: url(./fonts/static/OpenSans-Regular.ttf);
 }
-
 * {
     margin: 0;
     padding: 0;
@@ -294,13 +293,14 @@ header .dropdown li:hover ul,
 .envelope-post #btn-ver-mais {
     width: 9em;
     height: auto;
-    margin-left: 117.5%;
-    margin-bottom: 16%;
+    margin: auto 0;
     font-size: 20px;
     border: none;
     border-radius: 2px;
     background-color: #4867df;
     color: #FFFFFF;
+    text-decoration: none;
+    text-align: center;
 }
 .envelope-post #btn-ver-mais:hover {
     background-color: #2d44a0;
@@ -314,6 +314,8 @@ header .dropdown li:hover ul,
     box-shadow: 0 0 5px #0000004b;
     cursor: pointer;
     text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .post-container #imagem-postagem {
     width: 100%;
@@ -1001,10 +1003,10 @@ footer img {
     }
     header #login-btn {
         width: 7%;
-        font-size: 1.2em;
+        font-size: 1em;
     }
     header #login-btn i {
-        font-size: 1.2em;
+        font-size: 1em;
     }
     header nav ul {
         gap: 30px;
@@ -1013,17 +1015,20 @@ footer img {
         font-size: 1.4em;
     }
 
+    #secao-principal {
+        padding-top: 4vh;
+    }
     #secao-principal .titulo-caixa-post-principal {
-        font-size: 3.5em;
+        font-size: 2.1em;
     }
     #secao-principal .subtitulo-caixa-post-principal {
-        font-size: 2.5em;
+        font-size:1.6em;
     } 
     #secao-principal .post-secundario .titulo-caixa-post-principal {
-        font-size: 2.5em;
+        font-size: 1.3em;
     }
     #secao-principal .post-secundario .subtitulo-caixa-post-principal {
-        font-size: 2em;
+        font-size: 0.7em;
     }    
 
     /*#secao-principal {
@@ -1106,6 +1111,8 @@ footer img {
     }
     .post-container {
         width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     .post-container #imagem-postagem {
         width: 100%;
@@ -1125,25 +1132,8 @@ footer img {
         display: none;
     }
 
-    footer {
-        height: auto;
-        background-color: #000000;
-    }
-    .envelope-rodape {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
     footer img {
-        display: none;
-    }
-    .envelope-rodape #envelope-rodape-meio {
-        width: 90%;
-    }
-    .envelope-rodape #envelope-rodape-meio nav {
-        width: 90%;
-        margin-top: 5%;
+        width: 10%;
     }
 }
 
