@@ -308,18 +308,17 @@ header .dropdown li:hover ul,
 }
 .post-container {
     width: 100%;
+    height: 100%;
     display: block;
     background-color: #FFFFFF;
     color: #000000;
     box-shadow: 0 0 5px #0000004b;
     cursor: pointer;
     text-decoration: none;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 .post-container #imagem-postagem {
     width: 100%;
-    height: 46%;
+    height: 40%;
 }
 .post-container #titulo {
     font-size: 16px;
@@ -338,8 +337,9 @@ header .dropdown li:hover ul,
 .post-container #texto {
     font-size: 16px;
     width: 20%;
+    height: 35%;
     margin-left: 20px;
-    line-height: 22px;
+    line-height: 20px;
 }
 
 .envelope-lateral {
@@ -1111,12 +1111,10 @@ footer img {
     }
     .post-container {
         width: 100%;
-        overflow: hidden;
-        text-overflow: ellipsis;
     }
     .post-container #imagem-postagem {
         width: 100%;
-        height: 46%;
+        height: 40%;
     }
     .post-container #titulo {
         font-size: 1.5em;
@@ -1126,6 +1124,10 @@ footer img {
     }
     .post-container #texto {
         font-size: 1em;
+        width: 90%;
+        margin-left: 20px;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .lateral #posts-mais-lidos {

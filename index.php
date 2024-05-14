@@ -103,8 +103,8 @@ y
                 if (isset($_GET['qtde'])) {
                     $qtde =  $_GET['qtde'];
                 }
-
-                $sql = 'SELECT postId, postTitle, postImageURL, CONCAT(substring(postBody, 1, 360)) as postBody, postCreatedAt FROM post limit '.$qtde.';';
+                //'."'<p id=\'texto\'>'".', 
+                $sql = 'SELECT postId, postTitle, postImageURL, '.'CONCAT(substring(substring(postBody, 4, 200), 1, LOCATE(\'</p>\',postBody))) as postBody, postCreatedAt FROM post limit '.$qtde.';';
                 $sql = $pdo->query($sql);
 
                 if ($sql->rowCount() > 0) {

@@ -122,3 +122,6 @@ select * from post where postId not in (select postId from vw_new_posts);
 
 
 select * from post inner join user on user.userId = post.userId
+
+
+SELECT postId, postTitle, postImageURL, CONCAT('<p id=\'texto\'>', substring(postBody, 4, 360), "...</p>") as postBody, postCreatedAt FROM post limit 3;
