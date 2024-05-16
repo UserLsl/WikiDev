@@ -2,7 +2,6 @@
     font-family: OpenSans;
     src: url(./fonts/static/OpenSans-Regular.ttf);
 }
-
 *{
     margin: 0;
     padding: 0;
@@ -58,6 +57,46 @@ header #login-btn i{
 header #login-btn:hover{
     background-color: #2d44a0;
     cursor: pointer;
+}
+header .dropdown {
+    position: relative;
+    list-style: none;
+}
+header .dropdown .nome-usuario {
+    width: 100%;
+    height: auto;
+    margin-right: 50px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 2px;
+    color: #819cff;
+}
+header .dropdown .nome-usuario i {
+    margin-left: 4px;
+    font-size: 0.9em;
+}
+header .dropdown li ul {
+    position: absolute;
+    left: 0;
+    background-color: #819cff;
+    display: none;
+    text-align: left;
+}
+header .dropdown li ul li {
+    width: 88%;
+    display: block;
+    padding: 7px;
+}
+header .dropdown li ul a {
+    font-size: 1em;
+    color: #FFFFFF;
+}
+header .dropdown li ul li:hover {
+    background-color: #4867df;
+}
+header .dropdown li:hover ul,
+.dropdown li.over ul {
+    display: block;
 }
 
 .fundo-sobreposicao{
@@ -326,4 +365,215 @@ footer img{
     font-size: 13px;
     margin-top: 20px;
     color: #a3a3a3;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+    header {
+        display: flex;
+        flex-direction: row;
+        padding: 1%;
+        width: 100%;
+        height: 7%;
+    }
+    header #logo-header {
+        width: 20%;
+    }
+    header #login-btn {
+        width: 15%;
+        font-size: 0.7em;
+    }
+    header #login-btn i {
+        font-size: 0.7em;
+    }
+    header nav {
+        display: none;
+    }
+    header #btn-home {
+        display: block;
+        font-size: 0.7em;
+        color: #FFFFFF;
+        text-decoration: none;
+        text-align: center;
+    }
+    header .dropdown {
+        position: relative;
+        list-style: none;
+    }
+    header .dropdown .nome-usuario {
+        width: 100%;
+        height: auto;
+        margin-right: 50px;
+        font-size: 1.2em;
+        border: none;
+        border-radius: 2px;
+        color: #819cff;
+    }
+    header .dropdown .nome-usuario i {
+        margin-left: 4px;
+        font-size: 0.9em;
+    }
+    header .dropdown li ul {
+        position: absolute;
+        left: 0;
+        background-color: #819cff;
+        display: none;
+        text-align: left;
+    }
+    header .dropdown li ul li {
+        width: 88%;
+        display: block;
+        padding: 7px;
+    }
+    header .dropdown li ul a {
+        font-size: 1em;
+        color: #FFFFFF;
+    }
+    header .dropdown li ul li:hover {
+        background-color: #4867df;
+    }
+    header .dropdown li:hover ul,
+    .dropdown li.over ul {
+        display: block;
+    }
+
+    #loginContainer {
+        padding: 30px;
+        height: auto;
+        width: 80%;
+    }
+    #loginContainer h2 {
+        font-size: 2em;
+        margin-bottom: 3%;
+    }
+    .login-form {
+        height: 100%;
+    }
+    .login-form input,
+    .login-form button {
+        margin: 10% auto;
+        padding: 5%;
+        width: 60vw;
+    }
+    .login-form button {
+        font-size: 1.7em;
+    }
+
+    #secao-principal {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 79vh;
+        padding-top: 4vh;
+    }
+    #secao-principal .envelope-caixa {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        gap: 15px;
+        height: 95%;
+        width: 80%;
+    }
+    .caixa-post-principal {
+        width: 100%;
+        position: relative;
+    }
+    #secao-principal #post-destaque,
+    #secao-principal #post-secundario-topo,
+    #secao-principal #post-secundario-base {
+        width: 100%;
+        height: 100%;
+    }
+    #secao-principal #post-destaque img,
+    #secao-principal #post-secundario-topo img,
+    #secao-principal #post-secundario-base img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    #secao-principal #post-secundario-topo {
+        box-sizing: border-box;
+        margin-bottom: 0;
+    }
+    #secao-principal #post-secundario-topo,
+    #secao-principal #post-secundario-base {
+        margin-left: 0;
+    }
+    #secao-principal .titulo-caixa-post-principal,
+    #secao-principal .post-secundario .titulo-caixa-post-principal {
+        font-size: 0.8em;
+    }
+    #secao-principal .subtitulo-caixa-post-principal,
+    #secao-principal .post-secundario .subtitulo-caixa-post-principal {
+        font-size: 0.6em;
+    }
+
+    #secao-post {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+    .envelope-post {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        height: auto;
+        margin: auto 0;
+        padding: 0;
+    }
+    .envelope-post #btn-ver-mais {
+        width: 9em;
+        height: auto;
+        margin-left: 0;
+        margin-bottom: 8%;
+        font-size: 1.6em;
+    }
+    .post-container {
+        height: auto;
+        width: 100%;
+        text-decoration: none;
+    }
+    .post-container img {
+        width: 76vw;
+        height: 25vh;
+        margin-bottom: 10px;
+    }
+    .post-container #titulo {
+        font-size: 1.5em;
+    }
+    .post-container #data {
+        font-size: 0.8em;
+    }
+    .post-container #texto {
+        font-size: 1em;
+    }
+
+    .envelope-lateral {
+        display: none;
+    }
+
+    footer {
+        height: auto;
+        background-color: #000000;
+    }
+    .envelope-rodape {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    footer img {
+        display: none;
+    }
+    .envelope-rodape #envelope-rodape-meio {
+        width: 90%;
+    }
+    .envelope-rodape #envelope-rodape-meio nav {
+        width: 90%;
+        margin-top: 5%;
+    }
 }

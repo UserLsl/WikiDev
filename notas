@@ -1,0 +1,14 @@
+ARQUIVOS A SEREM CORRIGIDOS
+
+1- Postagem.css: 
+    Corrigir o nome de usuario e o menu dropdown.       *FEITO
+    Fazer a responsividade.                             
+2- Style.css:
+    Corrigir altura das caixas dos posts.
+    Corrigir a tag id="texto".
+    Corrigir o footer de cada tela responsiva.
+    Corrigir o botão ver mais de cada tela responsiva.
+3- RealizarPostagem.css:
+    Fazer a responsividade.*
+4- Menu suspenso:
+    Testar menu suspenso em telas pequenas.*

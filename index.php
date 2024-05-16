@@ -15,7 +15,7 @@
 </head>
 
 <body>
-   <header>
+   <header id="header">
         <img id="logo-header" src="./img/logo-header.png" alt="Logo WikiDev">
         <nav>
             <ul>
@@ -33,7 +33,7 @@
             echo "<ul class='dropdown'>
                     <li><a class='nome-usuario' href='#'>". $_SESSION['nome'] ."<i class='fa-solid fa-angle-down'></i></a>
                         <ul>
-                            <li><a href='#'>Realizar Postagem</a></li>
+                            <li><a href='realizarPostagem.html'>Realizar Postagem</a></li>
                             <li><a href='logout.php' id='logout-btn'>
                                     Sair
                                 </a>

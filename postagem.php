@@ -24,16 +24,32 @@
         <img id="logo-header" src="./img/logo-header.png" alt="Logo WikiDev">
         <nav>
             <ul>
-                <li><a href="testeindex.html">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a href="#">Dicas</a></li>
                 <li><a href="#">Tutoriais</a></li>
                 <li><a href="#">Projetos e Desafios</a></li>
                 <li><a href="#">Recursos</a></li>
             </ul>
         </nav>
-        <button id="login-btn">
-            <i class="fa fa-user"></i>Entrar</a>
-        </button>
+        <?php
+        session_start();
+        if (isset($_SESSION['nome'])) {
+            echo "<ul class='dropdown'>
+                    <li><a class='nome-usuario' href='#'>". $_SESSION['nome'] ."<i class='fa-solid fa-angle-down'></i></a>
+                        <ul>
+                            <li><a href='realizarPostagem.html'>Realizar Postagem</a></li>
+                            <li><a href='logout.php' id='logout-btn'>
+                                    Sair
+                                </a>
+                            </li>
+                        </ul>
+                    </li>";
+        } else {
+            echo '<button id="login-btn">
+                    <i class="fa fa-user"></i>Entrar
+                </button>';
+        }
+        ?>
     </header>
     <div class="fundo-sobreposicao" id="fundo-sobreposicao"></div><!-- /FUNDO-SOBREPOSICAO-->
 
