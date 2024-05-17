@@ -31,6 +31,7 @@
                 <li><a href="#">Recursos</a></li>
             </ul>
         </nav>
+        <a id="btn-home" href="#">Home</a>
         <?php
         session_start();
         if (isset($_SESSION['nome'])) {
@@ -82,7 +83,7 @@
                             <p id="data-post">'.$post[0]['postCreatedAt'].'</p>
                         </div>';
                     echo '<img src="'.$post[0]['postImageURL'].'" alt="">';
-                    echo '<p id="texto">'.$post[0]['postBody'].'</p>';
+                    echo '<div id=texto>'.$post[0]['postBody'].'</div>';
                     echo '<a href="like.php?postId='.$post[0]['postId'].'" id="like"> Curtir: <i id="icone-like" class="fa-regular fa-heart">'.$post[0]['postLikeds'].'</i></a>';
                 }
             ?>
