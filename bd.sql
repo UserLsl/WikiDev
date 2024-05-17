@@ -125,3 +125,5 @@ select * from post inner join user on user.userId = post.userId
 
 
 SELECT postId, postTitle, postImageURL, CONCAT('<p id=\'texto\'>', substring(postBody, 4, 360), "...</p>") as postBody, postCreatedAt FROM post limit 3;
+
+INSERT into post_tag set postId = 1, tagId = 1;
