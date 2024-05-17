@@ -104,7 +104,7 @@ y
                     $qtde =  $_GET['qtde'];
                 }
                 //'."'<p id=\'texto\'>'".', 
-                $sql = 'SELECT postId, postTitle, postImageURL, '.'CONCAT(substring(substring(postBody, 4, 200), 1, LOCATE(\'</p>\',postBody))) as postBody, postCreatedAt FROM post limit '.$qtde.';';
+                $sql = 'SELECT postId, postTitle, postImageURL, postBody, postCreatedAt FROM post limit '.$qtde.';';
                 $sql = $pdo->query($sql);
 
                 if ($sql->rowCount() > 0) {
@@ -113,7 +113,7 @@ y
                             <img id = "imagem-postagem" src="'.$post['postImageURL'].'" alt="">
                             <h3 id="titulo">'.$post['postTitle'].'</h3>
                             <p id="data">'.$post['postCreatedAt'].'</p>
-                            <p id="texto">'.$post['postBody'].'</p>
+                            <div id="texto">'.$post['postBody'].'</div>
                         </a>';
                     }
                 }
