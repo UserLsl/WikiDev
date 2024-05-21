@@ -278,10 +278,16 @@ header .dropdown li:hover ul,
 #secao-post {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: repeat(1, 1fr);
     background-color: #dce3ff;
     height: auto;
-    padding-top: 2%;
+}
+#envelope-main-post{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    padding-bottom: 5vh;
 }
 .envelope-post {
     display: grid;
@@ -290,10 +296,10 @@ header .dropdown li:hover ul,
     padding: 10px;
     width: 98%;
 }
-.envelope-post #btn-ver-mais {
+#btn-ver-mais{
     width: 9em;
     height: auto;
-    margin: auto 0;
+    margin: 0 auto;
     font-size: 20px;
     border: none;
     border-radius: 2px;
@@ -301,21 +307,23 @@ header .dropdown li:hover ul,
     color: #FFFFFF;
     text-decoration: none;
     text-align: center;
+    z-index: 100;
 }
-.envelope-post #btn-ver-mais:hover {
+#btn-ver-mais:hover {
     background-color: #2d44a0;
     cursor: pointer;
 }
 .post-container {
     display: block;
     width: 100%;
-    height: 100%;
+    height: 80vh;
     display: block;
     background-color: #FFFFFF;
     color: #000000;
     box-shadow: 0 0 5px #0000004b;
     cursor: pointer;
     text-decoration: none;
+    margin-bottom: 5vh;
 }
 .post-container #imagem-postagem {
     width: 100%;
@@ -325,26 +333,28 @@ header .dropdown li:hover ul,
     font-size:1.5em;
     font-weight: bold;
     margin: auto;
-    margin-bottom: 10px;
+    margin-bottom: 1vh;
     width: 90%;
-    height: 20%;
 }
 .post-container #data {
-    font-size: 14px;
+    font-size: 0.9em;
     width: 90%;
     margin: auto;
     margin-bottom: 10px;
     font-weight: lighter;
 }
 .post-container #texto{
-    display: inline-block;
-    width: 20%;
-    height: 40%;
-    line-height: 20px;
+    display: flex;
+    width: 80%;
+    height: 90%;
+    margin: auto;
+    line-height: 1.3;
+    margin-bottom: 2vh;
 }
 .post-container #texto p{
     font-size: 1em;
-    height: 75%;
+    height: 30%;
+    width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -692,7 +702,6 @@ footer img {
         font-size: 0.8em;
     }
     .post-container #texto {
-        font-size: 1em;
     }
 
     .envelope-lateral {
@@ -1217,19 +1226,27 @@ footer img {
 
     .post-container {
         width: 100%;
+        height: 100%;
     }
     .post-container #imagem-postagem {
         width: 100%;
-        height: 46%;
+        height: 40%;
     }
     .post-container #titulo {
         font-size: 2em;
+        padding-bottom:-2vh;
     }
     .post-container #data {
         font-size: 1em;
+        margin-top: 0px;
     }
     .post-container #texto {
         font-size: 2em;
+        height: 70%;
+    }
+    .post-container #texto p{
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
 
     .envelope-lateral {
