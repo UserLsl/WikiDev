@@ -314,3 +314,80 @@ footer img{
     margin-top: 20px;
     color: #a3a3a3;
 }
+
+@media only screen and (min-width: 1920px) and (max-width: 2560px) {
+    header #login-btn {
+        width: 7%;
+        font-size: 1em;
+    }
+    header #login-btn i {
+        font-size: 1em;
+    }
+    header #logo-header {
+        width: 10%;
+    }
+    header nav ul {
+        gap: 30px;
+    }
+    header li a {
+        font-size: 1.3em;
+    }
+
+    #secao-realizar-postagem{
+        padding-top: 10vh;
+    }
+    #envelope-secao-realizar-postagem{
+        width: 80%;
+    }
+    #envelope-secao-realizar-postagem h1{
+        font-size: 2em;
+    }
+    
+    .lateral{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 18%;
+        margin-right: -25px;
+    }
+    .lateral #barra-de-busca{
+        width: 291px;
+        height: 50px;
+        background-color: #FFFFFF;
+        color: #848484;
+        padding: 20px;
+        border: none;
+        box-shadow: 0 2px 5px #00000062;
+        margin-bottom: 30px;
+    }
+    .lateral #categorias{
+        background-color: #FFFFFF;
+        box-shadow: 0 2px 5px #00000062;
+        width: 291px;
+        border-radius: 10px 10px 0 0;
+    }
+    .lateral #categorias #titulo{
+        background-color: #4867df;
+        padding: 15.5px;
+        color: #FFFFFF;
+        font-size: 18px;
+        font-weight: 400;
+        border-radius: 10px 10px 0 0;
+    }
+    .lateral #categorias ul{
+        list-style: none;
+    }
+    .lateral #categorias ul li{
+        padding: 17.8px;
+        border-bottom: 1px solid #DBDBDB;
+        transition: transform 0.3s ease;    /* Transição suave ao passar o mouse */
+    }
+    .lateral #categorias ul li:hover{
+        transform: scale(1.1);  /* Aumenta o texto em 10%*/
+    }
+    .lateral #categorias ul li a{
+        text-decoration: none;
+        font-size: 16px;
+        color: #000000;
+    }
+}

@@ -96,7 +96,6 @@ y
     <section class="envelope-secao" id="secao-post">
         <div id="envelope-main-post">
             <?php
-
                 echo '<div class="envelope-post">';
                 require 'config.php';
                 
@@ -118,10 +117,10 @@ y
                         </a>';
                     }
                 }
-
-                $qtde = $qtde + 2;
+                
+                $qtde = $qtde + 3;
                 echo '</div>'; //<!-- /envelope-post-->
-                echo '<a href="index.php?qtde='.$qtde.'" id="btn-ver-mais">VER MAIS</a>'
+                echo '<a href="index.php?qtde='.$qtde.'" id="btn-ver-mais">VER MAIS</a>';
             ?>
         </div> <!-- /ENVELOPE-MAIN-POST -->
         <div class="envelope-lateral">

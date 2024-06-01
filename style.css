@@ -279,7 +279,7 @@ header .dropdown li:hover ul,
     display: grid;
     grid-template-columns: 2fr 1fr;
     background-color: #dce3ff;
-    height: auto;
+    min-height: 100vh;
 }
 #envelope-main-post{
     display: flex;
@@ -287,14 +287,15 @@ header .dropdown li:hover ul,
     align-items: center;
     height: auto;
     width: 100%;
-    padding-bottom: 5vh;
+    margin-bottom: 5vh;
 }
 .envelope-post {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(45%, 1fr)); /*Define 2 colunas de largura igual*/
+    grid-template-columns: 3fr 1fr;
     gap: 20px; /*Espaçamento entre os elementos*/
     padding: 10px;
     width: 98%;
+    height: auto;
 }
 #btn-ver-mais{
     width: 9em;
@@ -316,14 +317,13 @@ header .dropdown li:hover ul,
 .post-container {
     display: block;
     width: 100%;
-    height: 80vh;
+    min-height: 80vh;
     display: block;
     background-color: #FFFFFF;
     color: #000000;
     box-shadow: 0 0 5px #0000004b;
     cursor: pointer;
     text-decoration: none;
-    margin-bottom: 5vh;
 }
 .post-container #imagem-postagem {
     width: 100%;
@@ -335,6 +335,7 @@ header .dropdown li:hover ul,
     margin: auto;
     margin-bottom: 1vh;
     width: 90%;
+    height: 8%;
 }
 .post-container #data {
     font-size: 0.9em;
@@ -346,14 +347,15 @@ header .dropdown li:hover ul,
 .post-container #texto{
     display: flex;
     width: 80%;
-    height: 90%;
+    height: 40%;
     margin: auto;
     line-height: 1.3;
     margin-bottom: 2vh;
+    margin-left: 15px;
 }
 .post-container #texto p{
     font-size: 1em;
-    height: 30%;
+    height: 100%;
     width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -997,15 +999,12 @@ footer img {
         justify-content: center;
         align-items: center;
     }
-
     footer img {
         display: none;
     }
-
     .envelope-rodape #envelope-rodape-meio {
         width: 90%;
     }
-
     .envelope-rodape #envelope-rodape-meio nav {
         width: 90%;
         margin-top: 5%;
@@ -1016,6 +1015,9 @@ footer img {
 @media only screen and (min-width: 1366px) and (max-width: 1919px) {
     header {
         height: 6%;
+    }
+    header #logo-header {
+        width: 10%;
     }
     header #login-btn {
         width: 7%;
@@ -1028,74 +1030,24 @@ footer img {
         gap: 30px;
     }
     header li a {
-        font-size: 1.4em;
+        font-size: 1em;
     }
 
     #secao-principal {
         padding-top: 4vh;
     }
     #secao-principal .titulo-caixa-post-principal {
-        font-size: 2.1em;
+        font-size: 1.8em;
     }
     #secao-principal .subtitulo-caixa-post-principal {
-        font-size:1.6em;
+        font-size:1.3em;
     } 
     #secao-principal .post-secundario .titulo-caixa-post-principal {
-        font-size: 1.3em;
+        font-size: 1em;
     }
     #secao-principal .post-secundario .subtitulo-caixa-post-principal {
         font-size: 0.7em;
     }    
-
-    /*#secao-principal {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 85vh;
-        padding-top: 8vh;
-    }
-    #secao-principal .envelope-caixa {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
-        gap: 15px;
-        height: 95%;
-        width: 80%;
-    }
-    .caixa-post-principal {
-        width: 100%;
-        position: relative;
-    }
-    #secao-principal #post-destaque,
-    #secao-principal #post-secundario-topo,
-    #secao-principal #post-secundario-base {
-        width: 90vw;
-        height: 50vh;
-    }
-    #secao-principal #post-destaque img,
-    #secao-principal #post-secundario-topo img,
-    #secao-principal #post-secundario-base img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    #secao-principal #post-secundario-topo {
-        margin-bottom: 0;
-    }
-    #secao-principal #post-secundario-topo,
-    #secao-principal #post-secundario-base {
-        margin-left: 0;
-    }
-    #secao-principal .titulo-caixa-post-principal,
-    #secao-principal .post-secundario .titulo-caixa-post-principal {
-        font-size: 1.5em;
-    }
-    #secao-principal .subtitulo-caixa-post-principal,
-    #secao-principal .post-secundario .subtitulo-caixa-post-principal {
-        font-size: 1em;
-        margin-top: 5px;
-    }*/
 
     #secao-post {
         display: grid;
@@ -1127,7 +1079,7 @@ footer img {
     }
     .post-container {
         width: 100%;
-        height: 70vh;
+        height: 100%;
         display: block;
     }
     .post-container #imagem-postagem {
@@ -1135,20 +1087,13 @@ footer img {
         height: 40%;
     }
     .post-container #titulo {
-        font-size: 1.5em;
+        font-size: 1.2em;
     }
     .post-container #data {
         font-size: 0.8em;
     }
-    .post-container #texto{
-        display: inline-block;
-        width: 90%;
-        height: 40%;
-        margin-left: 20px;
-    }
     .post-container #texto p{
         font-size: 1em;
-        height: 70%;
         overflow: hidden;
         text-overflow: ellipsis;
     }
@@ -1163,32 +1108,35 @@ footer img {
 }
 
 /*Laptops e dispositivos com largura minima de 1920px e largura maxima de 2560px*/
-@media only screen and (min-width: 1920px) and (max-width: 2560px) {
+@media only screen and (min-width: 1920px) and (max-width: 2550px) {
     header #login-btn {
         width: 7%;
-        font-size: 1.6em;
+        font-size: 1em;
     }
     header #login-btn i {
-        font-size: 1.6em;
+        font-size: 1em;
+    }
+    header #logo-header {
+        width: 10%;
     }
     header nav ul {
         gap: 30px;
     }
     header li a {
-        font-size: 1.8em;
+        font-size: 1.3em;
     }
 
     #secao-principal .titulo-caixa-post-principal {
-        font-size: 3.5em;
+        font-size: 2em;
     }
     #secao-principal .subtitulo-caixa-post-principal {
-        font-size: 2.5em;
+        font-size: 1.5em;
     } 
     #secao-principal .post-secundario .titulo-caixa-post-principal {
-        font-size: 2.5em;
+        font-size: 1.7em;
     }
     #secao-principal .post-secundario .subtitulo-caixa-post-principal {
-        font-size: 2em;
+        font-size: 1.4em;
     }
     
 
@@ -1199,14 +1147,12 @@ footer img {
         background-color: #dce3ff;
         height: auto;
         padding-top: 2%;
-    }
-    
+    }  
     .envelope-post {
         display: grid;
         grid-template-columns: repeat(3, 1fr); /*Define 2 colunas de largura igual*/
         gap: 20px; /*Espaçamento entre os elementos*/
     }
-    
     .envelope-post #btn-ver-mais {
         width: 9em;
         height: auto;
@@ -1218,22 +1164,20 @@ footer img {
         background-color: #4867df;
         color: #FFFFFF;
     }
-    
     .envelope-post #btn-ver-mais:hover {
         background-color: #2d44a0;
         cursor: pointer;
     }
-
     .post-container {
         width: 100%;
         height: 100%;
     }
     .post-container #imagem-postagem {
         width: 100%;
-        height: 40%;
+        height: 30%;
     }
     .post-container #titulo {
-        font-size: 2em;
+        font-size: 1.7em;
         padding-bottom:-2vh;
     }
     .post-container #data {
@@ -1241,8 +1185,8 @@ footer img {
         margin-top: 0px;
     }
     .post-container #texto {
-        font-size: 2em;
-        height: 70%;
+        font-size: 1.5em;
+        height: 50%;
     }
     .post-container #texto p{
         text-overflow: ellipsis;
@@ -1313,6 +1257,134 @@ footer img {
         color: #9db0ff;
     }
     
+    .envelope-rodape #envelope-rodape-meio p {
+        font-size: 13px;
+        margin-top: 20px;
+        color: #a3a3a3;
+    }
+}
+
+/*Laptops e dispositivos com largura minima de 2560px e largura maxima de 3840px*/
+@media only screen and (min-width: 2559px) and (max-width: 3840px) {
+    header {
+        height: 7%;
+    }
+    header #logo-header {
+        width: 10%;
+    }
+    header #login-btn {
+        width: 7%;
+        font-size: 1.3em;
+    }
+    header #login-btn i {
+        font-size: 1.em;
+    }
+    header li a {
+        font-size: 1.3em;
+    }
+
+    #secao-principal .titulo-caixa-post-principal {
+        top: 75%;
+        font-size: 2em;
+    }
+    #secao-principal .subtitulo-caixa-post-principal {
+        font-size: 2em;
+    } 
+    #secao-principal .post-secundario .titulo-caixa-post-principal {
+        top: 70%;
+        font-size: 1.7em;
+    }
+    #secao-principal .post-secundario .subtitulo-caixa-post-principal {
+        font-size: 1.4em;
+    }
+    
+    .envelope-post {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /*Define 2 colunas de largura igual*/
+        gap: 20px; /*Espaçamento entre os elementos*/
+    }
+    .post-container {
+        width: 100%;
+        height: 100%;
+    }
+    .post-container #imagem-postagem {
+        width: 100%;
+        height: 30%;
+    }
+    .post-container #titulo {
+        font-size: 1.7em;
+        height: 4%;
+        padding-bottom:0vh;
+    }
+    .post-container #data {
+        font-size: 1em;
+        margin-top: 0px;
+    }
+    .post-container #texto {
+        font-size: 1.5em;
+        height: 50%;
+    }
+    .post-container #texto p{
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    .envelope-lateral {
+        padding-top: 2%;
+    }
+    .lateral #barra-de-busca {
+        height: 8%;
+        margin-bottom: 20px;
+    }
+    .lateral #categorias #titulo {
+        font-size: 1.7em;
+    }
+    .lateral #categorias ul li a {
+        font-size: 1.6em;
+    }
+    .lateral #posts-mais-lidos {
+        display: none;
+    }
+
+    footer {
+        height: auto;
+        background-color: #000000;
+    }
+    .envelope-rodape {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+    }
+    footer img {
+        width: 120px;
+        height: auto;
+    } 
+    .envelope-rodape #envelope-rodape-meio {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .envelope-rodape #envelope-rodape-meio nav {
+        width: 45%;
+    }
+    .envelope-rodape #envelope-rodape-meio ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .envelope-rodape #envelope-rodape-meio ul li a {
+        font-size: 16px;
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+    .envelope-rodape #envelope-rodape-meio ul li a:hover {
+        color: #9db0ff;
+    }
     .envelope-rodape #envelope-rodape-meio p {
         font-size: 13px;
         margin-top: 20px;

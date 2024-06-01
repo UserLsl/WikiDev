@@ -821,18 +821,19 @@ footer img{
         height: 6%;
     }
     header #logo-header {
-        width: 17%;
+        width: 10%;
     }
     header #login-btn {
-        width: 15%;
-        font-size: 1.2em;
+        width: 7%;
+        font-size: 1em;
     }
     header #login-btn i {
-        font-size: 0.7em;
+        font-size: 1em;
     }
     header li a{
-        font-size: 2em;
+        font-size: 1.3em;
     }
+
     header #btn-home {
         display: none;
     }
@@ -862,14 +863,14 @@ footer img{
         margin-bottom: 2vh;
     }
     .envelope-post #author-data-wrapper #author-post{
-        font-size:1.7em;
+        font-size:1.4em;
     }
     .envelope-post #texto{
         margin-top: 2vh;
         margin-bottom: 2vh;
     }
     .envelope-post #texto p{
-        font-size: 2em;
+        font-size: 1.7em;
     }
     .envelope-post #like{
         font-size: 1.2em;
