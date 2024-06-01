@@ -8,13 +8,14 @@ if (isset($_POST['email']) && empty($_POST['email']) == false && isset($_POST['s
     $email = addslashes($_POST['email']);
     $senha = addslashes($_POST['senha']);
 
-    $sql = "select userPassword, userName from User where userEmail = '$email';";
+    $sql = "select userPassword, userName, userId from User where userEmail = '$email';";
     $sql = $pdo->query($sql);
 
     if ($sql->rowCount() > 0) {
         foreach ($sql->fetchall() as $user) {
             if ($user['userPassword'] == $senha) {
                 $_SESSION['nome'] = $user['userName'];
+                $_SESSION['userId'] = $user['userId'];
                 echo "<META HTTP-EQUIV=REFRESH CONTENT='0; URL=index.php'>";
             } else {
                 echo "<META HTTP-EQUIV=REFRESH CONTENT='0; URL=index.php'>

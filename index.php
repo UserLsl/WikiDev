@@ -33,7 +33,7 @@
             echo "<ul class='dropdown'>
                     <li><a class='nome-usuario' href='#'>". $_SESSION['nome'] ."<i class='fa-solid fa-angle-down'></i></a>
                         <ul>
-                            <li><a href='realizarPostagem.html'>Realizar Postagem</a></li>
+                            <li><a href='realizarPostagem.php'>Realizar Postagem</a></li>
                             <li><a href='logout.php' id='logout-btn'>
                                     Sair
                                 </a>
@@ -58,7 +58,7 @@
             <button type="submit">Entrar</button>
         </form>
     </div><!-- /LOGIN-CONTAINER-->
-y
+
     <section class="envelope-secao" id="secao-principal">
         <div class="envelope-caixa">
             <?php
@@ -104,7 +104,14 @@ y
                     $qtde =  $_GET['qtde'];
                 }
                 //'."'<p id=\'texto\'>'".', 
-                $sql = 'SELECT postId, postTitle, postImageURL, postBody, postCreatedAt FROM post limit '.$qtde.';';
+
+                if (isset($_SESSION['pesquisa'])) {
+                    $pesquisa = $_SESSION['pesquisa'];
+                    $sql = "SELECT postId, postTitle, postImageURL, postBody, postCreatedAt FROM post WHERE postTitle like '%".$pesquisa."%' limit ".$qtde.";";
+                } else {
+                    $sql = 'SELECT postId, postTitle, postImageURL, postBody, postCreatedAt FROM post limit '.$qtde.';';
+                }
+               
                 $sql = $pdo->query($sql);
 
                 if ($sql->rowCount() > 0) {
@@ -125,7 +132,17 @@ y
         </div> <!-- /ENVELOPE-MAIN-POST -->
         <div class="envelope-lateral">
             <div class="lateral">
-                        <input type="search" placeholder="BUSCAR..." id="barra-de-busca">
+                <form action="pesquisar.php" method="post" class="login-form">
+                    <?php
+                        if (isset($_SESSION['pesquisa'])) {
+                            echo "<input name='pesquisar' type='search' value='".$_SESSION['pesquisa']."' id='barra-de-busca'>";
+                        } else {
+                            echo "<input name='pesquisar' type='search' placeholder='BUSCAR...' id='barra-de-busca'>";
+                        }
+                    ?>
+                    
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
                         <div id="categorias">
                             <h3 id="titulo">CATEGORIAS</h3>
                             <ul>

@@ -31,9 +31,25 @@
                 <li><a href="#">Recursos</a></li>
             </ul>
         </nav>
-        <button id="login-btn">
-            <i class="fa fa-user"></i>Entrar</a>
-        </button>
+        <?php
+        session_start();
+        if (isset($_SESSION['nome'])) {
+            echo "<ul class='dropdown'>
+                    <li><a class='nome-usuario' href='#'>". $_SESSION['nome'] ."<i class='fa-solid fa-angle-down'></i></a>
+                        <ul>
+                            <li><a href='realizarPostagem.html'>Realizar Postagem</a></li>
+                            <li><a href='logout.php' id='logout-btn'>
+                                    Sair
+                                </a>
+                            </li>
+                        </ul>
+                    </li>";
+        } else {
+            echo '<button id="login-btn">
+                    <i class="fa fa-user"></i>Entrar
+                </button>';
+        }
+        ?>
     </header>
     <div class="fundo-sobreposicao" id="fundo-sobreposicao"></div><!-- /FUNDO-SOBREPOSICAO-->
 
@@ -53,45 +69,45 @@
             <p><i>Preencha todos os campos do formulário com os dados da postagem!</i></p>
 
             <div id="envelope-formulario">
-                <form id="form-realizar-postagem" action="" method="post">
+                <form id="form-realizar-postagem" action="post.php" method="post">
                     <label id="label-titulo-postagem" for="titulo-postagem">Titulo da postagem:</label>
-                    <input type="text" id="input-titulo-postagem" placeholder="Digite o titulo do post..." required>
+                    <input name="titulo" type="text" id="input-titulo-postagem" placeholder="Digite o titulo do post..." required>
     
                     <label for="corpo-postagem">Corpo da postagem:</label>
-                    <textarea id="myTextarea"></textarea>
+                    <textarea name="conteudo" id="myTextarea"></textarea>
     
                     <label for="categoria-postagem">Categoria da postagem:</label>
-                    <input type="text" id="input-categoria-postagem" placeholder="Digite a categoria do post..." required>
+                    <select name="categoria" id="input-categoria-postagem" required>
+                        <?php
+                            require 'config.php';
+
+                            $sql = 'SELECT categoryId, categoryTitle FROM category;';
+                            $sql = $pdo->query($sql);
+
+                            foreach ($sql->fetchAll() as $category) {
+                                echo "<option value='".$category['categoryId']."'>".$category['categoryTitle']."</option>";
+                            }
+                        ?>
+                    </select>
     
                     <label for="imagem-postagem">Imagem da postagem:</label>
-                    <input type="url" placeholder="Digite o url da imagem do post..." required>
+                    <input name="imagem" type="url" placeholder="Digite o url da imagem do post..." required>
 
                     <label for="caixa-input-checkbox">Tags da postagem:</label>
                     <div class="caixa-input-checkbox">
-                        <div class="item-checkbox">
-                            <input type="checkbox">
-                            <label for="">PHP</label>
-                        </div>
-                        <div class="item-checkbox">
-                            <input type="checkbox">
-                            <label for="">JavaScript</label>
-                        </div>
-                        <div class="item-checkbox">
-                            <input type="checkbox">
-                            <label for="">CSS</label>
-                        </div>
-                        <div class="item-checkbox">
-                            <input type="checkbox">
-                            <label for="">HTML</label>
-                        </div>
-                        <div class="item-checkbox">
-                            <input type="checkbox">
-                            <label for="">MYSQL</label>
-                        </div>
-                        <div class="item-checkbox">
-                            <input type="checkbox">
-                            <label for="">Responsividade</label>
-                        </div>
+                        <?php
+                            require 'config.php';
+
+                            $sql = 'SELECT tagId, tagName FROM tag;';
+                            $sql = $pdo->query($sql);
+
+                            foreach ($sql->fetchAll() as $tag) {
+                                echo "<div class='item-checkbox'>";
+                                echo "<input type='checkbox' name='tags[]' value='".$tag['tagId']."'>";
+                                echo "<label>".$tag['tagName']."</label>";
+                                echo "</div>";
+                            }
+                        ?>
                     </div>
 
                     <button id="btn-formulario" type="submit">Enviar Formulário</button>
