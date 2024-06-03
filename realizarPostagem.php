@@ -115,7 +115,6 @@
             </div><!-- /ENVELOPE-FORMULARIO-->
         </div><!-- /ENVELOPE-SECAO-REALIZAR-POSTAGEM-->
         <div class="lateral">
-            <input type="search" placeholder="BUSCAR..." id="barra-de-busca">
             <div id="categorias">
                 <h3 id="titulo">CATEGORIAS</h3>
                 <ul>

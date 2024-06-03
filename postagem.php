@@ -120,11 +120,11 @@
                     ?>
                 </ul>
             </div><!-- /CATEGORIAS-->
-            <div id="posts-mais-lidos">
+            <!--<div id="posts-mais-lidos">
                 <h3 id="titulo">POSTS MAIS CURTIDOS</h3>
                 <ul>
                     <?php
-                    require 'config.php';
+                    /*require 'config.php';
 
                     $sql = "SELECT postTitle, postImageURL FROM post order by postLikeds desc limit 5;";
                     $sql = $pdo->query($sql);
@@ -137,10 +137,10 @@
                                             <a href="postagem.html">' . $post['postTitle'] . '</a>
                                         </li>';
                         }
-                    }
+                    }*/
                     ?>
                 </ul>
-            </div><!-- /POSTS-MAIS-LIDOS-->
+            </div>/POSTS-MAIS-LIDOS-->
         </div><!-- /LATERAL-->
     </section>
     <footer>

@@ -38,7 +38,7 @@ header ul li{
 }
 header li a{
     color: #FFFFFF;
-    font-size: 17px;
+    font-size: 1.1em;
     text-decoration: none;
 }
 header #login-btn{
@@ -157,7 +157,7 @@ header .dropdown li:hover ul,
     justify-content: center;
     background-color: #dce3ff;
     height: auto;
-    padding-top: 20vh;
+    padding-top: 24vh;
 }
 .envelope-post{
     display: flex;
@@ -165,8 +165,9 @@ header .dropdown li:hover ul,
     align-items: center;
     background-color: #FFFFFF;
     box-shadow: 0 2px 5px #00000062;
-    width: 80%;
+    width: 90%;
     margin-bottom: 30px;
+    margin-top: 1vh;
 }
 .envelope-post hr{
     width: 80%;
@@ -229,7 +230,7 @@ header .dropdown li:hover ul,
     width: 25%;
 }
 .lateral #caixa-pesquisa{
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -289,60 +290,6 @@ header .dropdown li:hover ul,
     color: #000000;
 }
 
-.lateral #posts-mais-lidos{
-    background-color: #FFFFFF;
-    box-shadow: 0 2px 5px #00000062;
-    width: 291px;
-    margin-top: 35px;
-    border-radius: 10px 10px 0 0;
-}
-.lateral #posts-mais-lidos #titulo{
-    background-color: #4867df;
-    padding: 15.5px;
-    color: #FFFFFF;
-    font-size: 18px;
-    font-weight: 400;
-    border-radius: 10px 10px 0 0;
-}
-.lateral #posts-mais-lidos ul{
-    list-style: none;
-}
-.lateral #posts-mais-lidos ul li:first-child{
-    height: 141.5px;
-    display: flex;
-    flex-direction: column;
-}
-.lateral #posts-mais-lidos ul li:first-child img{
-    height: 87px;
-    width: 140px;
-}
-.lateral #posts-mais-lidos ul li:first-child a{
-    font-size: 16px;
-    font-weight: bold;
-    width: 100%;
-}
-.lateral #posts-mais-lidos ul li{
-    padding: 11.75px;
-    border-bottom: 1px solid #DBDBDB;
-    transition: transform 0.3s ease;    /* Transição suave ao passar o mouse */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-.lateral #posts-mais-lidos ul li img{
-    width: 99px;
-    height: 57px;
-}
-.lateral #posts-mais-lidos ul li:hover{
-    transform: scale(1.05);  /* Aumenta o texto em 10%*/
-}
-.lateral #posts-mais-lidos ul li a{
-    text-decoration: none;
-    font-size: 16px;
-    width: 60%;
-    color: #000000;
-}
-
 footer{
     height: auto;
     background-color: #000000;
@@ -388,388 +335,26 @@ footer img{
     color: #a3a3a3;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 767px) {
-    header {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 1%;
-        width: 100%;
-        height: 7%;
-    }
-    header #logo-header {
-        width: 20%;
-    }
-    header #login-btn {
-        width: 15%;
-        font-size: 0.7em;
-    }
-    header #login-btn i {
-        font-size: 0.7em;
-    }
-    header nav {
-        display: none;
-    }
-    header #btn-home {
-        display: block;
-        font-size: 0.7em;
-        color: #FFFFFF;
-        text-decoration: none;
-        text-align: center;
-    }
-    header .dropdown {
-        position: relative;
-        list-style: none;
-    }
-    header .dropdown .nome-usuario {
-        width: 100%;
-        height: auto;
-        font-size: 1.2em;
-        border: none;
-        border-radius: 2px;
-        color: #819cff;
-    }
-    header .dropdown .nome-usuario i {
-        margin-left: 4px;
-        font-size: 0.9em;
-    }
-    header .dropdown li ul {
-        position: absolute;
-        left: 0;
-        background-color: #819cff;
-        display: none;
-        text-align: left;
-    }
-    header .dropdown li ul li {
-        width: 88%;
-        display: block;
-        padding: 7px;
-    }
-    header .dropdown li ul a {
-        font-size: 1em;
-        color: #FFFFFF;
-    }
-    header .dropdown li ul li:hover {
-        background-color: #4867df;
-    }
-    header .dropdown li:hover ul,
-    .dropdown li.over ul {
-        display: block;
-    }
-
-    #loginContainer {
-        padding: 30px;
-        height: auto;
-        width: 80%;
-    }
-    #loginContainer h2 {
-        font-size: 2em;
-        margin-bottom: 3%;
-    }
-    .login-form {
-        height: 100%;
-    }
-    .login-form input,
-    .login-form button {
-        margin: 10% auto;
-        padding: 5%;
-        width: 60vw;
-    }
-    .login-form button {
-        font-size: 1.7em;
-    }
-
-    #secao-post{
-        padding-top: 10vh;
-    }
-    .envelope-post{
-        width: 95%;
-    }
-    .envelope-post #titulo-post{
-        font-size: 1.5em;
-        margin-top: 3vh;
-        margin-bottom: 1vh;
-        width: 95%;
-    }
-    .envelope-post #author-data-wrapper{
-        margin-top: 2vh;
-        margin-bottom: 2vh;
-    }
-    .envelope-post #author-data-wrapper #author-post{
-        font-size: 0.9em;
-    }
-    .envelope-post #texto{
-        margin-top: 2vh;
-        margin-bottom: 2vh;
-    }
-    .envelope-post #like{
-        font-size: 1.2em;
-        text-decoration: none;
-        padding-top: 1vh;
-        padding-bottom: 1vh;
-    }
-
-    .lateral{
-        display: none;
-    }
-
-    footer {
-        height: auto;
-        background-color: #000000;
-    }
-    .envelope-rodape {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    footer img {
-        display: none;
-    }
-    .envelope-rodape #envelope-rodape-meio {
-        width: 90%;
-    }
-    .envelope-rodape #envelope-rodape-meio nav {
-        width: 90%;
-        margin-top: 5%;
-    }
-}
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
-    header {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 1%;
-        width: 100%;
-        height: 7%;
-    }
-    header #logo-header {
-        width: 17%;
-    }
-    header #login-btn {
-        width: 15%;
-        font-size: 0.7em;
-    }
-    header #login-btn i {
-        font-size: 0.7em;
-    }
-    header nav ul{
-        gap: 20px;
-    }
-    header li a{
-        font-size: 0.9em;
-    }
-    header #btn-home {
-        display: none;
-    }
-    header .dropdown {
-        position: relative;
-        list-style: none;
-    }
-    header .dropdown .nome-usuario {
-        width: 100%;
-        height: auto;
-        font-size: 1.2em;
-        border: none;
-        border-radius: 2px;
-        color: #819cff;
-    }
-    header .dropdown .nome-usuario i {
-        margin-left: 4px;
-        font-size: 0.9em;
-    }
-    header .dropdown li ul {
-        position: absolute;
-        left: 0;
-        background-color: #819cff;
-        display: none;
-        text-align: left;
-    }
-    header .dropdown li ul li {
-        width: 88%;
-        display: block;
-        padding: 7px;
-    }
-    header .dropdown li ul a {
-        font-size: 1em;
-        color: #FFFFFF;
-    }
-    header .dropdown li ul li:hover {
-        background-color: #4867df;
-    }
-    header .dropdown li:hover ul,
-    .dropdown li.over ul {
-        display: block;
-    }
-
-    #loginContainer {
-        padding: 30px;
-        height: auto;
-        width: 80%;
-    }
-    #loginContainer h2 {
-        font-size: 2em;
-        margin-bottom: 3%;
-    }
-    .login-form {
-        height: 100%;
-    }
-    .login-form input,
-    .login-form button {
-        margin: 10% auto;
-        padding: 5%;
-        width: 60vw;
-    }
-    .login-form button {
-        font-size: 1.7em;
-    }
-
-    #secao-post{
-        padding-top: 10vh;
-    }
-    .envelope-post{
-        width: 95%;
-    }
-    .envelope-post #titulo-post{
-        font-size: 1.5em;
-        margin-top: 3vh;
-        margin-bottom: 1vh;
-        width: 95%;
-    }
-    .envelope-post #author-data-wrapper{
-        margin-top: 2vh;
-        margin-bottom: 2vh;
-    }
-    .envelope-post #author-data-wrapper #author-post{
-        font-size: 0.9em;
-    }
-    .envelope-post #texto{
-        margin-top: 2vh;
-        margin-bottom: 2vh;
-    }
-    .envelope-post #like{
-        font-size: 1.2em;
-        text-decoration: none;
-        padding-top: 1vh;
-        padding-bottom: 1vh;
-    }
-
-    .lateral{
-        display: none;
-    }
-
-    footer img{
-        width: 15%;
-    }
-}
-@media only screen and (min-width: 1024px) and (max-width: 1365px) {
-    header {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 1%;
-        width: 100%;
-        height: 7%;
-    }
-    header #logo-header {
-        width: 17%;
-    }
-    header #login-btn {
-        width: 15%;
-        font-size: 1.2em;
-    }
-    header #login-btn i {
-        font-size: 0.7em;
-    }
-    header nav ul{
-        gap: 20px;
-    }
-    header li a{
-        font-size: 1.2em;
-    }
-    header #btn-home {
-        display: none;
-    }
-
-    #secao-post{
-        padding-top: 12vh;
-        justify-content: space-around;
-        padding-bottom: 4vh;
-    }
-    .envelope-post{
-        width: 65%;
-    }
-    .envelope-post #titulo-post{
-        font-size: 1.9em;
-        margin-top: 3vh;
-        margin-bottom: 1vh;
-        width: 95%;
-    }
-    .envelope-post #author-data-wrapper{
-        margin-top: 2vh;
-        margin-bottom: 2vh;
-    }
-    .envelope-post #author-data-wrapper #author-post{
-        font-size:1.2em;
-    }
-    .envelope-post #texto{
-        margin-top: 2vh;
-        margin-bottom: 2vh;
-    }
-    .envelope-post #like{
-        font-size: 1.2em;
-        text-decoration: none;
-        padding-top: 1vh;
-        padding-bottom: 1vh;
-    }
-
-    .lateral{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 30%;
-        margin-right: 0.5vw;
-    }
-    .lateral #barra-de-busca{
-        width: 100%;
-    }
-    .lateral #categorias{
-        width: 100%;
-    }
-    
-    
-    .lateral #posts-mais-lidos{
-        width: 100%;
-    }
-
-    footer img{
-        width: 15%;
-    }
-}
+/*Laptops e dispositivos com largura minima de 1920px e largura maxima de 2560px*/
 @media only screen and (min-width: 1366px) and (max-width: 1919px) {
     header {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 1%;
-        width: 100%;
-        height: 7%;
+        height: 6%;
     }
     header #logo-header {
-        width: 17%;
+        width: 10%;
     }
     header #login-btn {
-        width: 15%;
-        font-size: 1.2em;
+        width: 7%;
+        font-size: 1em;
     }
     header #login-btn i {
-        font-size: 0.7em;
+        font-size: 1em;
     }
-    header nav ul{
-        gap: 20px;
+    header nav ul {
+        gap: 30px;
     }
-    header li a{
-        font-size: 1.2em;
+    header li a {
+        font-size: 1em;
     }
     header #btn-home {
         display: none;
@@ -781,7 +366,7 @@ footer img{
         padding-bottom: 4vh;
     }
     .envelope-post{
-        width: 65%;
+        width: 70%;
     }
     .envelope-post #titulo-post{
         font-size: 1.9em;
@@ -806,21 +391,6 @@ footer img{
         padding-top: 1vh;
         padding-bottom: 1vh;
     }
-
-    .lateral{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 30%;
-        margin-right: 0.5vw;
-    }
-    .lateral #barra-de-busca{
-        width: 100%;
-    }
-    .lateral #categorias{
-        width: 100%;
-    }
-    
     
     .lateral #posts-mais-lidos{
         width: 100%;
@@ -830,7 +400,9 @@ footer img{
         width: 10%;
     }
 }
-@media only screen and (min-width: 1920px) and (max-width: 2560px) {
+
+/*Laptops e dispositivos com largura minima de 2560px e largura maxima de 3840px*/
+@media only screen and (min-width: 1920px) and (max-width: 2559px) {
     header {
         display: flex;
         flex-direction: row;
@@ -899,24 +471,109 @@ footer img{
     }
 
     .lateral{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         width: 15%;
-        margin-right: 0.5vw;
     }
-    .lateral #barra-de-busca{
-        width: 100%;
+    .lateral #caixa-pesquisa{
+        width: 90%;
     }
-    .lateral #categorias{
-        width: 100%;
-    }
-    
+
     .lateral #posts-mais-lidos{
         width: 100%;
     }
 
     footer img{
         width: 7%;
+    }
+}
+
+/*Laptops e dispositivos com largura minima de 2560px e largura maxima de 3840px*/
+@media only screen and (min-width: 2560px) and (max-width: 3840px) {
+    header {
+        display: flex;
+        width: 100%;
+        height: 6%;
+    }
+    header #logo-header {
+        width: 10%;
+    }
+    header #login-btn {
+        width: 7%;
+        font-size: 1em;
+    }
+    header #login-btn i {
+        font-size: 1em;
+    }
+    header li a{
+        font-size: 1.3em;
+    }
+
+    header #btn-home {
+        display: none;
+    }
+    header .dropdown .nome-usuario {
+        font-size: 2em;
+    }
+    header .dropdown .nome-usuario i {
+        font-size: 0.9em;
+    }
+
+    #secao-post{
+        padding-top: 8vh;
+        justify-content: space-around;
+        padding-bottom: 4vh;
+    }
+    .envelope-post{
+        width: 80%;
+    }
+    .envelope-post #titulo-post{
+        font-size: 2.5em;
+        margin-top: 3vh;
+        margin-bottom: 1vh;
+        width: 95%;
+    }
+    .envelope-post #author-data-wrapper{
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+    }
+    .envelope-post #author-data-wrapper #author-post{
+        font-size:1.4em;
+    }
+    .envelope-post #data-post{
+        font-size: 1.5em;
+    }
+    .envelope-post #texto{
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+    }
+    .envelope-post #texto p{
+        font-size: 1.7em;
+    }
+    .envelope-post #like{
+        font-size: 1.2em;
+        text-decoration: none;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+    }
+
+    .lateral{
+        width: 15%;
+    }
+    .lateral #caixa-pesquisa{
+        padding-top: 1vh;
+        width: 90%;
+    }
+
+    .lateral #posts-mais-lidos{
+        width: 100%;
+    }
+
+    footer img{
+        width: 6%;
+    }
+    .envelope-rodape #envelope-rodape-meio ul li a{
+        font-size: 1.6em;
+    }
+    .envelope-rodape #envelope-rodape-meio p{
+        font-size: 1.3em;
     }
 }

@@ -431,3 +431,45 @@ footer img{
         color: #000000;
     }
 }
+
+/*Laptops e dispositivos com largura minima de 2560px e largura maxima de 3840px*/
+@media only screen and (min-width: 2560px) and (max-width: 3840px) {
+    header #login-btn {
+        width: 7%;
+        font-size: 1em;
+    }
+    header #login-btn i {
+        font-size: 1em;
+    }
+    header #logo-header {
+        width: 10%;
+    }
+    header nav ul {
+        gap: 30px;
+    }
+    header li a {
+        font-size: 1.3em;
+    }
+
+    #secao-realizar-postagem{
+        padding-top: 6vh;
+    }
+    #envelope-secao-realizar-postagem{
+        width: 80%;
+    }
+    
+    .lateral{
+        width: 15%;
+    }
+    
+
+    footer img{
+        width: 6%;
+    }
+    .envelope-rodape #envelope-rodape-meio ul li a{
+        font-size: 1.6em;
+    }
+    .envelope-rodape #envelope-rodape-meio p{
+        font-size: 1.3em;
+    }
+}
