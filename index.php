@@ -132,7 +132,7 @@
         </div> <!-- /ENVELOPE-MAIN-POST -->
         <div class="envelope-lateral">
             <div class="lateral">
-                <form action="pesquisar.php" method="post" class="login-form">
+                <form action="pesquisar.php" method="post" id="caixa-pesquisa">
                     <?php
                         if (isset($_SESSION['pesquisa'])) {
                             echo "<input name='pesquisar' type='search' value='".$_SESSION['pesquisa']."' id='barra-de-busca'>";
@@ -141,7 +141,7 @@
                         }
                     ?>
                     
-                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <button type="submit" id="btn-caixa-pesquisa"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
                         <div id="categorias">
                             <h3 id="titulo">CATEGORIAS</h3>

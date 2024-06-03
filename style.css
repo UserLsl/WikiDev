@@ -161,7 +161,7 @@ header .dropdown li:hover ul,
     justify-content: center;
     align-items: center;
     height: 79vh;
-    padding-top: 8vh;
+    padding-top: 12vh;
     background-color: #121214;
 }
 #secao-principal .envelope-caixa {
@@ -297,23 +297,6 @@ header .dropdown li:hover ul,
     width: 98%;
     height: auto;
 }
-#btn-ver-mais{
-    width: 9em;
-    height: auto;
-    margin: 0 auto;
-    font-size: 20px;
-    border: none;
-    border-radius: 2px;
-    background-color: #4867df;
-    color: #FFFFFF;
-    text-decoration: none;
-    text-align: center;
-    z-index: 100;
-}
-#btn-ver-mais:hover {
-    background-color: #2d44a0;
-    cursor: pointer;
-}
 .post-container {
     display: block;
     width: 100%;
@@ -360,6 +343,23 @@ header .dropdown li:hover ul,
     overflow: hidden;
     text-overflow: ellipsis;
 }
+#btn-ver-mais{
+    width: 9em;
+    height: auto;
+    margin: 0 auto;
+    font-size: 20px;
+    border: none;
+    border-radius: 2px;
+    background-color: #4867df;
+    color: #FFFFFF;
+    text-decoration: none;
+    text-align: center;
+    z-index: 100;
+}
+#btn-ver-mais:hover {
+    background-color: #2d44a0;
+    cursor: pointer;
+}
 
 .envelope-lateral {
     display: flex;
@@ -374,15 +374,35 @@ header .dropdown li:hover ul,
     align-items: center;
     width: 100%;
 }
+.lateral #caixa-pesquisa{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
 .lateral #barra-de-busca {
-    width: 90%;
-    height: 4%;
+    width: 75%;
+    height: 70%;
     background-color: #FFFFFF;
     color: #848484;
     padding: 20px;
     border: none;
-    box-shadow: 0 0 5px #0000004b;
-    margin-bottom: 10px;
+    box-shadow: 0 2px 5px #00000062;
+    outline: none;
+}
+.lateral #btn-caixa-pesquisa{
+    width: 15%;
+    height: 70%;
+    border: none;
+    box-shadow: 0 2px 5px #00000062;
+    background-color: #4867df;
+    color: #FFFFFF;
+}
+.lateral #btn-caixa-pesquisa:hover{
+    background-color: #2d44a0;
+    cursor: pointer;
 }
 .lateral #categorias {
     background-color: #FFFFFF;
@@ -1034,7 +1054,7 @@ footer img {
     }
 
     #secao-principal {
-        padding-top: 4vh;
+        padding-top: 8vh;
     }
     #secao-principal .titulo-caixa-post-principal {
         font-size: 1.8em;
@@ -1088,6 +1108,7 @@ footer img {
     }
     .post-container #titulo {
         font-size: 1.2em;
+        height: 8vh;
     }
     .post-container #data {
         font-size: 0.8em;

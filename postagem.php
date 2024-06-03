@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,8 @@
     <script lang="Javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="postagem.css">
     <title>WikiDev</title>
-     <script>
-        $(document).ready(function() { 
+    <script>
+        $(document).ready(function () {
             var href = window.location.href;
 
             if (href.substr(href.length - 5) == '#like') {
@@ -17,8 +18,9 @@
                 document.getElementById('like').href = "#like";
             }
         });
-    </script> 
+    </script>
 </head>
+
 <body>
     <header>
         <img id="logo-header" src="./img/logo-header.png" alt="Logo WikiDev">
@@ -36,7 +38,7 @@
         session_start();
         if (isset($_SESSION['nome'])) {
             echo "<ul class='dropdown'>
-                    <li><a class='nome-usuario' href='#'>". $_SESSION['nome'] ."<i class='fa-solid fa-angle-down'></i></a>
+                    <li><a class='nome-usuario' href='#'>" . $_SESSION['nome'] . "<i class='fa-solid fa-angle-down'></i></a>
                         <ul>
                             <li><a href='realizarPostagem.html'>Realizar Postagem</a></li>
                             <li><a href='logout.php' id='logout-btn'>
@@ -62,70 +64,81 @@
             <button type="submit">Entrar</button>
         </form>
     </div><!-- /LOGIN-CONTAINER-->
-    
+
     <section class="envelope-secao" id="secao-post">
         <div class="envelope-post">
             <?php
-                require 'config.php';
-                if (isset($_GET['id'])) {
-                    $id =  $_GET['id'];
-                }
+            require 'config.php';
+            if (isset($_GET['id'])) {
+                $id = $_GET['id'];
+            }
 
-                $sql = 'SELECT *, user.UserName FROM post INNER JOIN user on user.userId = post.userId WHERE postId = '.$id.';';
-                $sql = $pdo->query($sql);
+            $sql = 'SELECT *, user.UserName FROM post INNER JOIN user on user.userId = post.userId WHERE postId = ' . $id . ';';
+            $sql = $pdo->query($sql);
 
-                if ($sql->rowCount() > 0) {
-                    $post = $sql->fetchAll();
-                    echo '<h1 id="titulo-post">'.$post[0]['postTitle'].'</h1>';
-                    echo '<hr>';
-                    echo '<div id="author-data-wrapper">
-                            <p id="author-post">'.$post[0]['UserName'].'</p>
-                            <p id="data-post">'.$post[0]['postCreatedAt'].'</p>
+            if ($sql->rowCount() > 0) {
+                $post = $sql->fetchAll();
+                echo '<h1 id="titulo-post">' . $post[0]['postTitle'] . '</h1>';
+                echo '<hr>';
+                echo '<div id="author-data-wrapper">
+                            <p id="author-post">' . $post[0]['UserName'] . '</p>
+                            <p id="data-post">' . $post[0]['postCreatedAt'] . '</p>
                         </div>';
-                    echo '<img src="'.$post[0]['postImageURL'].'" alt="">';
-                    echo '<div id=texto>'.$post[0]['postBody'].'</div>';
-                    echo '<a href="like.php?postId='.$post[0]['postId'].'" id="like"> Curtir: <i id="icone-like" class="fa-regular fa-heart">'.$post[0]['postLikeds'].'</i></a>';
-                }
+                echo '<img src="' . $post[0]['postImageURL'] . '" alt="">';
+                echo '<div id=texto>' . $post[0]['postBody'] . '</div>';
+                echo '<a href="like.php?postId=' . $post[0]['postId'] . '" id="like"> Curtir: <i id="icone-like" class="fa-regular fa-heart">' . $post[0]['postLikeds'] . '</i></a>';
+            }
             ?>
-                
+
         </div><!-- /envelope-post-->
         <div class="lateral">
-            <input type="search" placeholder="BUSCAR..." id="barra-de-busca">
+            <form action="pesquisar.php" method="post" id="caixa-pesquisa">
+                <?php
+                if (isset($_SESSION['pesquisa'])) {
+                    echo "<input name='pesquisar' type='search' value='" . $_SESSION['pesquisa'] . "' id='barra-de-busca'>";
+                } else {
+                    echo "<input name='pesquisar' type='search' placeholder='BUSCAR...' id='barra-de-busca'>";
+                }
+                ?>
+
+                <button type="submit" id="btn-caixa-pesquisa"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
             <div id="categorias">
                 <h3 id="titulo">CATEGORIAS</h3>
                 <ul>
-                    <li><a href="#">Desenvolvimento Web</a></li>
-                    <li><a href="#">Linguagens de Programação</a></li>
-                    <li><a href="#">Desenvolvimento Backend</a></li>
-                    <li><a href="#">Desenvolvimento FrontEnd</a></li>
-                    <li><a href="#">FrameWork.net</a></li>
-                    <li><a href="#">JavaScript</a></li>
-                    <li><a href="#">Banco de Dados</a></li>
+                    <?php
+                    require 'config.php';
+
+                    $sql = "select categoryId, categoryTitle, (select count(*) from post where post.categoryId = Category.categoryId) as qtde from Category order by qtde desc limit 7;";
+                    $sql = $pdo->query($sql);
+
+                    if ($sql->rowCount() > 0) {
+                        foreach ($sql->fetchAll() as $row) {
+                            echo "<li><a href='#" . $row['categoryId'] . "'>" . $row['categoryTitle'] . "</a></li>";
+                        }
+                    }
+                    ?>
                 </ul>
             </div><!-- /CATEGORIAS-->
             <div id="posts-mais-lidos">
-                <h3 id="titulo">POSTS MAIS LIDOS</h3>
+                <h3 id="titulo">POSTS MAIS CURTIDOS</h3>
                 <ul>
-                    <li>
-                        <img src="./img/desenvolvimentoDeSoftware.jpg" alt="">
-                        <a href="#">A Arte do Desenvolvimento de Software</a>
-                    </li>
-                    <li>
-                        <img src="./img/universoJavaScript.jpg" alt="">
-                        <a href="#">Explorando o Universo JavaScript</a>
-                    </li>
-                    <li>
-                        <img src="./img/construindoComDados.jpg" alt="">
-                        <a href="#">Construindo com Dados</a>
-                    </li>
-                    <li>
-                        <img src="./img/desvendandoANuvem.jpg" alt="">
-                        <a href="#">Desvendando a Nuvem</a>
-                    </li>
-                    <li>
-                        <img src="./img/mundoDaProgramacao.jpg" alt="">
-                        <a href="#">Explorando o Mundo da Programação</a>
-                    </li>
+                    <?php
+                    require 'config.php';
+
+                    $sql = "SELECT postTitle, postImageURL FROM post order by postLikeds desc limit 5;";
+                    $sql = $pdo->query($sql);
+
+                    if ($sql->rowCount() > 0) {
+                        foreach ($sql->fetchAll() as $post) {
+                            echo
+                                '<li>
+                                            <img src="' . $post['postImageURL'] . '" alt="' . $post['postTitle'] . '">
+                                            <a href="postagem.html">' . $post['postTitle'] . '</a>
+                                        </li>';
+                        }
+                    }
+                    ?>
                 </ul>
             </div><!-- /POSTS-MAIS-LIDOS-->
         </div><!-- /LATERAL-->
@@ -141,10 +154,12 @@
                     </ul>
                 </nav>
                 <p>© 2024. Todos os direitos reservados ao WikiDev.<br>
-                    Os materiais aqui encontrados não podem ser publicados, transmitidos, reescritos ou redistribuídos sem autorização.</p>
+                    Os materiais aqui encontrados não podem ser publicados, transmitidos, reescritos ou redistribuídos
+                    sem autorização.</p>
             </div><!-- /ENVELOPE-RODAPE-MEIO-->
         </div><!-- /ENVELOPE-RODAPE-->
     </footer>
     <script src="script.js"></script>
 </body>
+
 </html>

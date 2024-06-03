@@ -59,6 +59,46 @@ header #login-btn:hover{
     background-color: #2d44a0;
     cursor: pointer;
 }
+header .dropdown {
+    position: relative;
+    list-style: none;
+}
+header .dropdown .nome-usuario {
+    width: 100%;
+    height: auto;
+    margin-right: 50px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 2px;
+    color: #819cff;
+}
+header .dropdown .nome-usuario i {
+    margin-left: 4px;
+    font-size: 0.9em;
+}
+header .dropdown li ul {
+    position: absolute;
+    left: 0;
+    background-color: #819cff;
+    display: none;
+    text-align: left;
+}
+header .dropdown li ul li {
+    width: 88%;
+    display: block;
+    padding: 7px;
+}
+header .dropdown li ul a {
+    font-size: 1em;
+    color: #FFFFFF;
+}
+header .dropdown li ul li:hover {
+    background-color: #4867df;
+}
+header .dropdown li:hover ul,
+.dropdown li.over ul {
+    display: block;
+}
 
 .fundo-sobreposicao{
     display: none;

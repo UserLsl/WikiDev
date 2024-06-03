@@ -157,7 +157,7 @@ header .dropdown li:hover ul,
     justify-content: center;
     background-color: #dce3ff;
     height: auto;
-    padding-top: 15vh;
+    padding-top: 20vh;
 }
 .envelope-post{
     display: flex;
@@ -165,7 +165,7 @@ header .dropdown li:hover ul,
     align-items: center;
     background-color: #FFFFFF;
     box-shadow: 0 2px 5px #00000062;
-    width: 70%;
+    width: 80%;
     margin-bottom: 30px;
 }
 .envelope-post hr{
@@ -227,22 +227,41 @@ header .dropdown li:hover ul,
     flex-direction: column;
     align-items: center;
     width: 25%;
-    margin-right: -25px;
 }
-.lateral #barra-de-busca{
-    width: 291px;
-    height: 50px;
+.lateral #caixa-pesquisa{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.lateral #barra-de-busca {
+    width: 100%;
+    height: 70%;
     background-color: #FFFFFF;
     color: #848484;
     padding: 20px;
     border: none;
     box-shadow: 0 2px 5px #00000062;
-    margin-bottom: 30px;
+    outline: none;
+}
+.lateral #btn-caixa-pesquisa{
+    width: 15%;
+    height: 70%;
+    border: none;
+    box-shadow: 0 2px 5px #00000062;
+    background-color: #4867df;
+    color: #FFFFFF;
+}
+.lateral #btn-caixa-pesquisa:hover{
+    background-color: #2d44a0;
+    cursor: pointer;
 }
 .lateral #categorias{
     background-color: #FFFFFF;
     box-shadow: 0 2px 5px #00000062;
-    width: 291px;
+    width: 90%;
     border-radius: 10px 10px 0 0;
 }
 .lateral #categorias #titulo{
